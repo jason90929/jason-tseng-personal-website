@@ -1,0 +1,16 @@
+<div ng-controller="EducationController">
+    <h2 class="main-title" ng-bind="title"></h2>
+
+    <article class="indent" ng-repeat="item in schools">
+        <div class="intro-wrapper">
+            <div class="intro">
+                <p class="main-intro" ng-bind="item.name_ZH"></p>
+                <p class="main-year" ng-bind="item.year"></p>
+            </div>
+            <div class="sub">
+                <p class="sub-intro" ng-bind="item.name_EN"></p>
+            </div>
+        </div>
+    </article>
+
+</div>

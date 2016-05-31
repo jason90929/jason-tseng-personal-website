@@ -1,0 +1,42 @@
+$focus-font-color: #fff;
+$no-focus-font-color: #838383;
+$border-color: #737373;
+$orange-bg-color: rgba(151, 80, 5, 1);
+$black-bg-color: #000;
+$black-bg-opacity-color: rgba(0, 0, 0, .6);
+$black-bg-opacity-dark-color: rgba(0, 0, 0, .8);
+
+@font-face {
+    font-family: 'Oswald-Bold';
+    font-weight: bold;
+    src: url('fonts/Oswald/Oswald-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Oswald-BoldItalic';
+    font-weight: bold;
+    font-style: italic;
+    src: url('fonts/Oswald/Oswald-BoldItalic.ttf');
+}
+
+@font-face {
+    font-family: 'Oswald-Light';
+    src: url('fonts/Oswald/Oswald-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Oswald-LightItalic';
+    font-style: italic;
+    src: url('fonts/Oswald/Oswald-LightItalic.ttf');
+}
+
+@font-face {
+    font-family: 'Oswald-Medium';
+    src: url('fonts/Oswald/Oswald-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Oswald-MediumItalic';
+    font-style: italic;
+    src: url('fonts/Oswald/Oswald-MediumItalic.ttf');
+}

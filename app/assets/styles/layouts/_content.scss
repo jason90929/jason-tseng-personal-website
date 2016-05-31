@@ -1,0 +1,114 @@
+@media all {
+    .content-wrapper {
+        position: relative;
+        padding-top: 80px;
+        background-color: $black-bg-opacity-color;
+        box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
+        transition: 300ms;
+
+        h2 {
+            font-size: 30px;
+            color: $focus-font-color;
+        }
+    }
+
+    .content {
+        position: relative;
+        padding: 20px;
+
+        &.show-in-small {
+            display: block;
+        }
+
+        &.show-in-large {
+            display: none;
+        }
+
+        .indent {
+            padding: 0 1.5em;
+        }
+    }
+
+    .intro-wrapper {
+        position: relative;
+        width: 100%;
+        margin-bottom: 40px;
+
+        .intro {
+            position: relative;
+            display: block;
+
+            .main-intro {
+                position: relative;
+                text-align: left;
+            }
+
+            .main-year {
+                position: relative;
+                text-align: right;
+            }
+        }
+
+        .sub {
+            position: relative;
+            display: block;
+
+            .sub-intro {
+                position: relative;
+                display: block;
+            }
+        }
+    }
+}
+
+@media all and (min-width: 768px) {
+    .content-wrapper {
+        position: absolute;
+        display: block;
+        top: 20px;
+        left: 300px;
+        right: 20px;
+        bottom: 20px;
+        overflow-y: auto;
+        padding: 0;
+    }
+
+    .content {
+        position: absolute;
+        display: block;
+        width: 100%;
+
+        &.show-in-small {
+            display: none;
+        }
+
+        &.show-in-large {
+            display: block;
+        }
+    }
+
+    .intro-wrapper {
+        max-width: 768px;
+
+        .intro {
+            display: flex;
+            flex-wrap: wrap;
+
+            .main-intro {
+                flex: 3;
+            }
+
+            .main-year {
+                flex: 1;
+            }
+        }
+    }
+}
+
+@media all and (min-width: 1280px) {
+    .content-wrapper {
+        top: 60px;
+        right: 40px;
+        left: 380px;
+    }
+}

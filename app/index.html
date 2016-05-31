@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Jason Tseng</title>
+
+    <link rel="stylesheet" href="assets/bundle/bundle.css" />
+    <link rel="stylesheet" href="assets/main.css" />
+</head>
+
+<body class="skin" ng-controller="MainController">
+
+<aside class="main-aside">
+    <section class="navigation">
+        <nav>
+            <ul id="navigation_menu">
+                <li ng-click="toggleClass(item.order); moveSmoothly(); hideNavigationMenu();" ng-repeat="item in menu_list | orderBy: 'order'">
+                    <a ng-href="#{{item.id}}" ng-bind="item.name"></a>
+                </li>
+                <li class="background"></li>
+            </ul>
+        </nav>
+    </section>
+
+    <header class="main-intro">
+        <div class="show-more" ng-click="showNavigationMenu();">
+            <i class="fa fa-list"></i>
+        </div>
+        <h1 class="name">JASON TSENG</h1>
+        <h3 class="title">FRONT-END DEVELOPER</h3>
+    </header>
+
+    <section class="main-menu">
+        <nav>
+            <ul id="main_menu">
+                <li ng-click="toggleClass(item.order)" ng-repeat="item in menu_list | orderBy: 'order'">
+                    <a ng-href="#{{item.id}}" ng-bind="item.name"></a>
+                </li>
+                <li class="background"></li>
+            </ul>
+        </nav>
+    </section>
+</aside>
+
+<div class="content-wrapper fade-out">
+    <section class="content show-in-small" ng-repeat="item in menu_list" app-part="{{item.id}}" id="{{item.id}}"></section>
+
+    <section class="content show-in-large view" ng-view></section>
+</div>
+
+</body>
+
+<script src="assets/bundle/bundle.js"></script>
+<script src="assets/main.js"></script>
+
+</html>

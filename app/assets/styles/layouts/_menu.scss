@@ -1,0 +1,304 @@
+@media all {
+    .main-aside {
+        position: fixed;
+        display: block;
+        width: 100%;
+        height: 0;
+        background-color: $black-bg-opacity-dark-color;
+        box-shadow: 0 0 5px 0 lighten($black-bg-opacity-dark-color, 25%) inset;
+        z-index: 1;
+
+        .navigation {
+            display: block;
+            transform: translateX(-100%);
+            width: 80%;
+            padding-top: 30px;
+            position: absolute;
+            text-align: right;
+            z-index: 0;
+            transition: 300ms;
+            height: 100vh;
+            background-color: black;
+
+            ul {
+                margin-bottom: 74px;
+                padding: 0;
+
+                li {
+                    list-style: none;
+                    width: 100%;
+                    text-align: inherit;
+                    height: 46px;
+                    line-height: 46px;
+
+                    &.background {
+                        box-shadow: 0 0 10px 0 rgba(255, 255, 255, .1) inset;
+                        position: absolute;
+                        top: -102px;
+                        display: block;
+                        z-index: -1;
+                        transition: 0.35s ease-out 0s;
+
+                        $background-color: rgba(255, 255, 255, .3);
+
+                        background: $background-color;
+                        background: -webkit-linear-gradient(-135deg, $background-color, mix($background-color, black, 40%)); /* For Safari 5.1 to 6.0 */
+                        background: -o-linear-gradient(-135deg, $background-color, mix($background-color, black, 40%)); /* For Opera 11.1 to 12.0 */
+                        background: -moz-linear-gradient(-135deg, $background-color, mix($background-color, black, 40%)); /* For Firefox 3.6 to 15 */
+                        background: linear-gradient(-135deg, $background-color, mix($background-color, black, 40%)); /* Standard syntax */
+                    }
+
+                    a {
+                        display: block;
+                        transform: skew(0deg);
+                        padding-right: 20px;
+                        height: inherit;
+                        line-height: inherit;
+                        font-size: 22px;
+                        color: #838383;
+
+                        -webkit-transition: all .2s ease-out;
+                        -moz-transition: all .2s ease-out;
+                        -ms-transition: all .2s ease-out;
+                        -o-transition: all .2s ease-out;
+                        transition: all .2s ease-out;
+                    }
+
+                    &.active, &:hover {
+                        a {
+                            transform: skew(-2deg);
+                            line-height: 48px;
+                            padding-right: 25px;
+                            font-size: 24px;
+                            color: $focus-font-color;
+                            text-decoration: none;
+
+                            -webkit-transition: all .2s ease-out;
+                            -moz-transition: all .2s ease-out;
+                            -ms-transition: all .2s ease-out;
+                            -o-transition: all .2s ease-out;
+                            transition: all .2s ease-out;
+                        }
+                    }
+
+                    $elements: 15;
+                    @for $i from 1 to $elements {
+                        &:nth-child(#{$i}).active ~ .background {
+                            top: calc(#{$i} * 46px - 16px);
+                        }
+                    }
+
+                    @for $i from 1 to $elements {
+                        &:nth-child(#{$i}):hover ~ .background {
+                            top: calc(#{$i} * 46px - 16px);
+                        }
+                    }
+                }
+            }
+        }
+
+        .main-intro {
+            width: 100%;
+            position: relative;
+            border: 1px solid transparent;
+            -webkit-border-radius: 1px;
+            -moz-border-radius: 1px;
+            border-radius: 1px;
+            display: block;
+            vertical-align: bottom;
+            z-index: 1;
+            transition: 300ms;
+
+            background: $orange-bg-color; /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient(30deg, $orange-bg-color, lighten($orange-bg-color, 20%)); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(30deg, $orange-bg-color, lighten($orange-bg-color, 20%)); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(30deg, $orange-bg-color, lighten($orange-bg-color, 20%)); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(30deg, $orange-bg-color, lighten($orange-bg-color, 20%)); /* Standard syntax */
+
+            .show-more {
+                margin: 5px 0 5px 10px;
+                display: inline-block;
+                overflow: hidden;
+                line-height: 38px;
+                text-align: left;
+                font-size: 28px;
+                color: $focus-font-color;
+            }
+
+            .name {
+                display: inline-block;
+                text-align: left;
+                color: $focus-font-color;
+                font-size: 40px;
+                line-height: 38px;
+                margin: 5px 0 5px 10px;
+                overflow: hidden;
+            }
+
+            .title {
+                display: inline-block;
+                float: right;
+                text-align: right;
+                color: #eee;
+                font-size: 28px;
+                line-height: 38px;
+                margin: 5px 10px 5px 0;
+                overflow: hidden;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+        }
+
+        .main-menu {
+            display: none;
+            width: 80%;
+            padding: 0;
+            position: absolute;
+            text-align: right;
+            z-index: 0;
+            transition: 300ms;
+            height: 100vh;
+
+            ul {
+                margin-top: 41px;
+                margin-bottom: 74px;
+                padding: 0;
+
+                li {
+                    list-style: none;
+                    width: 100%;
+                    text-align: inherit;
+                    height: 46px;
+                    line-height: 46px;
+
+                    &.background {
+                        box-shadow: 0 0 10px 0 rgba(255, 255, 255, .1) inset;
+                        position: absolute;
+                        top: -102px;
+                        display: block;
+                        z-index: -1;
+                        transition: 0.35s ease-out 0s;
+
+                        $background-color: rgba(255, 255, 255, .3);
+
+                        background: $background-color;
+                        background: -webkit-linear-gradient(-135deg, $background-color, mix($background-color, black, 40%)); /* For Safari 5.1 to 6.0 */
+                        background: -o-linear-gradient(-135deg, $background-color, mix($background-color, black, 40%)); /* For Opera 11.1 to 12.0 */
+                        background: -moz-linear-gradient(-135deg, $background-color, mix($background-color, black, 40%)); /* For Firefox 3.6 to 15 */
+                        background: linear-gradient(-135deg, $background-color, mix($background-color, black, 40%)); /* Standard syntax */
+                    }
+
+                    a {
+                        display: block;
+                        transform: skew(0deg);
+                        padding-right: 20px;
+                        height: inherit;
+                        line-height: inherit;
+                        font-size: 22px;
+                        color: #838383;
+
+                        -webkit-transition: all .2s ease-out;
+                        -moz-transition: all .2s ease-out;
+                        -ms-transition: all .2s ease-out;
+                        -o-transition: all .2s ease-out;
+                        transition: all .2s ease-out;
+                    }
+
+                    &.active, &:hover {
+                        a {
+                            transform: skew(-2deg);
+                            line-height: 48px;
+                            padding-right: 25px;
+                            font-size: 24px;
+                            color: $focus-font-color;
+                            text-decoration: none;
+
+                            -webkit-transition: all .2s ease-out;
+                            -moz-transition: all .2s ease-out;
+                            -ms-transition: all .2s ease-out;
+                            -o-transition: all .2s ease-out;
+                            transition: all .2s ease-out;
+                        }
+                    }
+
+                    $elements: 15;
+                    @for $i from 1 to $elements {
+                        &:nth-child(#{$i}).active ~ .background {
+                            top: calc(#{$i} * 46px - 46px);
+                        }
+                    }
+
+                    @for $i from 1 to $elements {
+                        &:nth-child(#{$i}):hover ~ .background {
+                            top: calc(#{$i} * 46px - 46px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (min-width: 768px) {
+
+    .main-aside {
+        width: 260px;
+        left: 20px;
+        height: 100vh;
+
+        .navigation {
+            display: none;
+        }
+
+        .main-intro {
+            margin-top: 20px;
+            width: 270px;
+            margin-left: -5px;
+            height: 134px;
+            border: 1px solid $orange-bg-color;
+            text-align: center;
+            vertical-align: middle;
+
+            .show-more {
+                display: none;
+            }
+
+            .name {
+                text-align: center;
+                font-size: 46px;
+                line-height: 64px;
+                margin: 12px 0 0 0;
+            }
+
+            .title {
+                float: none;
+                text-align: center;
+                margin: 0 0 12px 0;
+            }
+        }
+
+        .main-menu {
+            transform: translateX(0);
+            width: 100%;
+            margin-top: 30px;
+            top: 0;
+            position: relative;
+            text-align: right;
+            display: block;
+        }
+    }
+}
+
+@media all and (min-width: 1280px) {
+    .main-aside {
+        left: 60px;
+
+        .main-intro {
+            margin-top: 60px;
+        }
+    }
+}

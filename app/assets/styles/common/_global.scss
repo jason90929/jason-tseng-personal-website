@@ -1,0 +1,128 @@
+h1, h2, h3, h4, h5, h6, p, span, div, section, hgroup, aside, article, a {
+    color: #ccc;
+
+    .white {
+        color: #fff;
+    }
+}
+
+h1 {
+    font-family: 'Oswald-Bold';
+}
+
+p, span, div, section, hgroup, aside, article {
+    font-family: 'Oswald-Light';
+}
+
+h2, h3, h4, h5, h6, a {
+    font-family: 'Oswald-Medium';
+}
+
+a, p {
+    font-size: 24px;
+}
+
+a {
+    &:hover, &:focus, &:active {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+.main-title {
+    margin-bottom: 1em;
+}
+
+body.skin {
+    background: #000 url('images/background.jpg') no-repeat center center fixed;
+    text-align: justify;
+
+    ::-moz-selection {
+        background: lighten($orange-bg-color, 12%);
+        color: #fff;
+    }
+    ::selection {
+        background: lighten($orange-bg-color, 12%);
+        color: #fff;
+    }
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, rgba(0, 0, 0, .4), 50%)) {
+    ::-webkit-scrollbar {
+        width:  $size;
+        height: $size;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: $foreground-color;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: $background-color;
+    }
+
+    // For Internet Explorer
+    body {
+        scrollbar-face-color: $foreground-color;
+        scrollbar-track-color: $background-color;
+    }
+}
+
+@include scrollbars(.5em, rgba(255, 255, 255, .4));
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.clear {
+    clear: both;
+}
+
+/* First animation*/
+.view {
+    position: absolute;
+
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+}
+
+.fade-out {
+    // 觸發進入
+    .view.ng-enter {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    // 完成進入
+    .view.ng-enter.ng-enter-active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    // 觸發離開
+    .view.ng-leave {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    // 完成離開
+    .view.ng-leave.ng-leave-active {
+        visibility: hidden;
+        opacity: 0;
+    }
+}

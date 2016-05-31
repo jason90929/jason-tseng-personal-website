@@ -1,0 +1,12 @@
+<did ng-controller="SkillsController">
+    <h2 class="main-title" ng-bind="title"></h2>
+
+    <article class="indent" ng-repeat="items in skills">
+        <h3 class="white" ng-bind="items.title"></h3>
+        <p class="" ng-bind="items.content"></p>
+        <div class="indent" ng-repeat="item in items.sub">
+            <h3 class="white" ng-bind="item.title"></h3>
+            <p class="indent" ng-bind="item.content"></p>
+        </div>
+    </article>
+</did>
