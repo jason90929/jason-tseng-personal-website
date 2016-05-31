@@ -1,5 +1,6 @@
 @media all {
     .content-wrapper {
+        z-index: -1;
         position: relative;
         padding-top: 80px;
         background-color: $black-bg-opacity-color;

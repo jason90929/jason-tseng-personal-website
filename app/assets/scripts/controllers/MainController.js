@@ -4,14 +4,46 @@ module.exports = function($scope, $rootScope) {
     });
     
     $scope.menu_list = [
-        {id: 'home', name: 'HOME', order: 1},
-        {id: 'about', name: 'ABOUT', order: 2},
-        {id: 'experience', name: 'EXPERIENCE', order: 3},
-        {id: 'skills', name: 'SKILLS', order: 4},
-        {id: 'education', name: 'EDUCATION', controller: 'EducationController', order: 5},
-        {id: 'employment', name: 'EMPLOYMENT', controller: 'EmploymentController', order: 6},
-        {id: 'sample', name: 'SAMPLE', controller: 'SampleController', order: 7},
-        {id: 'contact', name: 'CONTACT', controller: 'ContactController', order: 8}
+        {
+            id: 'home',
+            name: 'HOME',
+            order: 1
+        },
+        {
+            id: 'about',
+            name: 'ABOUT',
+            order: 2
+        },
+        {
+            id: 'experience',
+            name: 'EXPERIENCE',
+            order: 3
+        },
+        {
+            id: 'skills',
+            name: 'SKILLS',
+            order: 4
+        },
+        {
+            id: 'education',
+            name: 'EDUCATION',
+            order: 5
+        },
+        {
+            id: 'employment',
+            name: 'EMPLOYMENT',
+            order: 6
+        },
+        {
+            id: 'sample',
+            name: 'SAMPLE',
+            order: 7
+        },
+        {
+            id: 'contact',
+            name: 'CONTACT',
+            order: 8
+        }
     ];
 
     $scope.href = '';

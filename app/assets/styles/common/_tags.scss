@@ -1,0 +1,92 @@
+//http://codepen.io/fernandopasik/pen/AHCiu
+/* Change the font-size and you'll see all proportional */
+/* Some cool theming for the tag */
+.theme, .tag, .tag:before, .tag:after {
+    color: #fff;
+    border-color: lighten(rgb(198, 116, 11), 20%);
+    border-style: solid;
+    background-color: rgb(198, 116, 11);
+}
+
+/* All the necesary for making the tag */
+.tag {
+    display: block;
+    float: left;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 6px 12px;
+    line-height: 1;
+    position: relative;
+    margin-left: 24px;
+    border-width: 1px 1px 1px 0;
+    -moz-border-radius: 0 4.5px 4.5px 0;
+    -webkit-border-radius: 0;
+    border-radius: 0 4.5px 4.5px 0;
+
+    transition: all .3s ease-out;
+
+    &:hover {
+        background-color: lighten(rgb(198, 116, 11), 25%);
+
+        transition: all .3s ease-out;
+
+        &::before {
+            background-color: lighten(rgb(198, 116, 11), 25%);
+
+            transition: all .3s ease-out;
+        }
+
+        &::after {
+            background: rgba(0, 0, 0, 0.4);
+
+            transition: all .3s ease-out;
+        }
+    }
+}
+.tag:before, .tag:after {
+    content: "";
+    position: absolute;
+    display: block;
+    border-width: 1px;
+
+    transition: all .3s ease-out;
+}
+.tag:before {
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    -moz-transform: translate(-15px, 0) scale(0.745) rotateZ(-45deg);
+    -ms-transform: translate(-15px, 0) scale(0.745) rotateZ(-45deg);
+    -webkit-transform: translate(-15px, 0) scale(0.745) rotateZ(-45deg);
+    transform: translate(-15px, 0) scale(0.745) rotateZ(-45deg);
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px;
+    border-radius: 6px 0 0 0;
+}
+.tag:after {
+    top: 10.5px;
+    left: -3px;
+    width: 9px;
+    height: 9px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Some extra shadow :) */
+.tag,
+.tag:before {
+    -moz-box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.15);
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.15);
+}
+
+.tag:after {
+    -moz-box-shadow: inset 2px 3px 3px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset 2px 3px 3px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 2px 3px 3px rgba(0, 0, 0, 0.15);
+}
+

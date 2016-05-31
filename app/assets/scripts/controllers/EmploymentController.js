@@ -5,12 +5,12 @@ module.exports = function($scope) {
         {
             name_ZH: '巍新軟體',
             name_EN: 'WeThink Software',
-            date: '2014.08 ~ 2016.04'
+            duration: 'August 2014 ~ April 2016'
         },
         {
             name_ZH: '弄弄設計',
             name_EN: 'Nong Design Studio',
-            date: '2014.05 ~ Now'
+            duration: 'May 2014 ~ Now'
         }
     ]
 };
