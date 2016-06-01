@@ -1,4 +1,4 @@
-module.exports = function($scope) {
+module.exports = function($scope, $rootScope) {
     $scope.title = 'SKILLS';
 
     $scope.skills = [

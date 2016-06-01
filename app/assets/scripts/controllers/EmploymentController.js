@@ -1,16 +1,16 @@
-module.exports = function($scope) {
+module.exports = function($scope, $rootScope) {
     $scope.title = 'Employment';
 
     $scope.employment = [
         {
             name_ZH: '巍新軟體',
             name_EN: 'WeThink Software',
-            duration: 'August 2014 ~ April 2016'
+            duration: '2014.08 ~ 2016.04'
         },
         {
             name_ZH: '弄弄設計',
             name_EN: 'Nong Design Studio',
-            duration: 'May 2014 ~ Now'
+            duration: '2014.06 ~ Now'
         }
     ]
 };

@@ -1,7 +1,5 @@
 <div ng-controller="ContactController">
     <h2 class="main-title" ng-bind="title"></h2>
 
-    <p>
-        0988-300764
-    </p>
+    <p class="text-indent">Tel: <a href="" class="italic" ng-bind="profile.tel | tel" ng-click="makePhoneCall(profile.tel);"></a></p>
 </div>

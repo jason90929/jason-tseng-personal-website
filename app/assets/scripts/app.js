@@ -8,32 +8,25 @@ var EmploymentController = require('./controllers/EmploymentController');
 var SampleController = require('./controllers/SampleController');
 var ContactController = require('./controllers/ContactController');
 
+var AppPartDirective = require('./directive/AppPart');
+
+var TelFilter = require('./filter/Tel');
+
 var app = angular.module('myApp', ['ngRoute', 'ngAnimate']);
 
 app.controller('MainController', ['$scope', '$rootScope', MainController])
-    .controller('HomeController', ['$scope', HomeController])
-    .controller('AboutController', ['$scope', AboutController])
-    .controller('ExperienceController', ['$scope', ExperienceController])
-    .controller('SkillsController', ['$scope', SkillsController])
-    .controller('EducationController', ['$scope', EducationController])
-    .controller('EmploymentController', ['$scope', EmploymentController])
-    .controller('SampleController', ['$scope', SampleController])
-    .controller('ContactController', ['$scope', ContactController])
-    
-    .directive('appPart', function() {
+    .controller('HomeController', ['$scope', '$rootScope', HomeController])
+    .controller('AboutController', ['$scope', '$rootScope', AboutController])
+    .controller('ExperienceController', ['$scope', '$rootScope', ExperienceController])
+    .controller('SkillsController', ['$scope', '$rootScope', SkillsController])
+    .controller('EducationController', ['$scope', '$rootScope', EducationController])
+    .controller('EmploymentController', ['$scope', '$rootScope', EmploymentController])
+    .controller('SampleController', ['$scope', '$rootScope', SampleController])
+    .controller('ContactController', ['$scope', '$rootScope', '$window', ContactController])
 
-        return {
-            restrict: 'A',
-            link: function(scope, element, attrs) {
-                scope.contentUrl = attrs.appPart + '.html';
-                attrs.$observe("appPart",function(v){
-                    scope.contentUrl = v + '.html';
-                });
-            },
-            template: '<div ng-include="contentUrl"></div>'
-        };
-        
-    })
+    .directive('appPart', AppPartDirective)
+
+    .filter('tel', TelFilter)
 
     .config(['$routeProvider', function($routeProvider, $locationProvider) {
         $routeProvider.when('/home', {
@@ -64,5 +57,3 @@ app.controller('MainController', ['$scope', '$rootScope', MainController])
             redirectTo: '/'
         });
     }]);
-
-
