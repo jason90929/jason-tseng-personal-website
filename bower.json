@@ -28,8 +28,8 @@
     "jquery-ui": "^1.11.4",
     "bootstrap": "^3.3.6",
     "font-awesome": "^4.6.3",
-    "angular": "^1.5.5",
-    "angular-route": "^1.5.5",
-    "angular-animate": "^1.5.5"
+    "angular": "^1.5.6",
+    "angular-route": "^1.5.6",
+    "angular-animate": "^1.5.6"
   }
 }
