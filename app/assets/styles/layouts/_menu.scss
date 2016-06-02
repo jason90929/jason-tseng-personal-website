@@ -1,10 +1,10 @@
-@media all {
+@media screen {
     .main-aside {
         position: fixed;
         display: block;
         width: 100%;
         height: 0;
-        background-color: $black-bg-opacity-dark-color;
+        background: linear-gradient(to top, $black-bg-opacity-dark-color, lighten($black-bg-opacity-dark-color, 10%));
         box-shadow: 0 0 5px 0 lighten($black-bg-opacity-dark-color, 25%) inset;
         z-index: 1;
 
@@ -15,7 +15,7 @@
             padding-top: 30px;
             position: absolute;
             text-align: right;
-            z-index: 0;
+            z-index: 1;
             transition: 300ms;
             height: 100vh;
             background-color: black;
@@ -64,7 +64,8 @@
                         transition: all .2s ease-out;
                     }
 
-                    &.active, &:hover {
+                    &.active,
+                    &:hover {
                         a {
                             transform: skew(-2deg);
                             line-height: 48px;
@@ -97,10 +98,29 @@
             }
         }
 
+        .navigation-mask {
+            position: fixed;
+            display: block;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+            background: rgba(255, 255, 255, .4);
+            visibility: hidden;
+            opacity: 0;
+            transition: 300ms;
+
+            &.active {
+                visibility: visible;
+                opacity: 1;
+                transition: 300ms;
+            }
+        }
+
         .main-intro {
             width: 100%;
             position: relative;
-            border: 1px solid transparent;
             -webkit-border-radius: 1px;
             -moz-border-radius: 1px;
             border-radius: 1px;
@@ -208,7 +228,8 @@
                         transition: all .2s ease-out;
                     }
 
-                    &.active, &:hover {
+                    &.active,
+                    &:hover {
                         a {
                             transform: skew(-2deg);
                             line-height: 48px;
@@ -243,16 +264,17 @@
     }
 }
 
-@media all and (min-width: 768px) {
-
+@media screen and (min-width: 992px) {
     .main-aside {
         width: 260px;
         left: 20px;
         height: 100vh;
 
-        .navigation {
+        .navigation,
+        .navigation-mask {
             display: none;
         }
+
 
         .main-intro {
             margin-top: 20px;
@@ -293,7 +315,7 @@
     }
 }
 
-@media all and (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
     .main-aside {
         left: 60px;
 

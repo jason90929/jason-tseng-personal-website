@@ -14,7 +14,7 @@ var TelFilter = require('./filter/Tel');
 
 var app = angular.module('myApp', ['ngRoute', 'ngAnimate']);
 
-app.controller('MainController', ['$scope', '$rootScope', MainController])
+app.controller('MainController', ['$scope', '$rootScope', '$location', MainController])
     .controller('HomeController', ['$scope', '$rootScope', HomeController])
     .controller('AboutController', ['$scope', '$rootScope', AboutController])
     .controller('ExperienceController', ['$scope', '$rootScope', ExperienceController])

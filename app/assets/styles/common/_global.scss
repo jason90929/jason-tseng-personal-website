@@ -7,30 +7,28 @@ h1, h2, h3, h4, h5, h6, p, span, div, section, hgroup, aside, article, a {
 }
 
 h1 {
-    font-family: 'Oswald-Bold';
+    font-family: 'Oswald-Bold', 'XinGothic', 'Microsoft Jhenghei';
 
     &.italic {
-        font-family: 'Oswald-BoldItalic';
+        font-family: 'Oswald-BoldItalic', 'XinGothic', 'Microsoft Jhenghei';
     }
 }
 
 p, span, div, section, hgroup, aside, article {
-    font-family: 'Oswald-Light';
+    font-family: 'Oswald-Light', 'XinGothic', 'Microsoft Jhenghei';
 
     &.italic {
-        font-family: 'Oswald-LightItalic';
+        font-family: 'Oswald-LightItalic', 'XinGothic', 'Microsoft Jhenghei';
     }
 }
 
 h2, h3, h4, h5, h6, a {
-    font-family: 'Oswald-Medium';
+    font-family: 'Oswald-Medium', 'XinGothic', 'Microsoft Jhenghei';
 
     &.italic {
-        font-family: 'Oswald-MediumItalic';
+        font-family: 'Oswald-MediumItalic', 'XinGothic', 'Microsoft Jhenghei';
     }
 }
-
-
 
 a, p {
     font-size: 24px;
@@ -104,12 +102,24 @@ body.skin {
     clear: both;
 }
 
+.cursor {
+    cursor: pointer;
+}
+
 /* First animation*/
 .view {
     position: absolute;
 }
 
 .fade-out {
+    visibility: hidden;
+    opacity: 0;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
     // 觸發進入
     .view.ng-enter {
         visibility: hidden;

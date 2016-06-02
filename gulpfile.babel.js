@@ -84,3 +84,5 @@ gulp.task('build', gulpsync.sync([
 gulp.task('serve', gulpsync.sync([
     'build', 'connect', 'watch'
 ]));
+
+gulp.task('default', ['build']);

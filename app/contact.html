@@ -1,5 +1,8 @@
 <div ng-controller="ContactController">
     <h2 class="main-title" ng-bind="title"></h2>
 
-    <p class="text-indent">Tel: <a href="" class="italic" ng-bind="profile.tel | tel" ng-click="makePhoneCall(profile.tel);"></a></p>
+    <h3 class="indent" ng-repeat="item in profile">
+        <i ng-if="item.icon" class="white fa fa-{{item.icon}}"></i>
+        <span class="italic {{item.click ? 'cursor' : ''}}" ng-bind="item.name{{item.filter ? ' | ' + item.filter : ''}}" ng-click="item.click(item.name)"></span>
+    </h3>
 </div>

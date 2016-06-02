@@ -1,4 +1,4 @@
-module.exports = function($scope, $rootScope) {
+module.exports = function($scope, $rootScope, $location) {
     $rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
         $rootScope.animation = 'fade-out';
     });
@@ -53,7 +53,23 @@ module.exports = function($scope, $rootScope) {
         $li.eq(i - 1).addClass('active');
 
         $scope.href = $li.eq(i - 1).children('a').attr('href');
+        $scope.active = 'active';
     };
+
+    $(document).ready(function() {
+        // refresh 後要知道自己在哪個路徑
+        if ($location.$$path !== '/') {
+            for (var i = 0; i < $scope.menu_list.length; i++) {
+                if ($location.$$path === '/' + $scope.menu_list[i].id) {
+                    $scope.toggleClass(i + 1);
+                    break;
+                }
+            }
+        }
+        else {
+            $scope.active = '';
+        }
+    });
 
     $scope.moveSmoothly = function() {
         // scroll animation
@@ -84,7 +100,7 @@ module.exports = function($scope, $rootScope) {
 
     // 如果縮小時的 Navigation Bar 被開啟，放大後要關起來。
     window.onresize = function() {
-        if (window.innerWidth > 768 && $scope.onShowingNavigation) {
+        if (window.innerWidth > 992 && $scope.onShowingNavigation) {
             $scope.hideNavigationMenu();
         }
     };
