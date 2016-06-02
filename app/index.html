@@ -2,7 +2,8 @@
 <html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <base href="/">
 
     <title>Jason Tseng - Front-End Developer</title>
 
@@ -10,14 +11,16 @@
     <meta name="author" content="Jason Tseng">
     <meta name="robots" content="index" />
 
+    <link rel="icon" href="assets/images/favicon.ico">
     <link rel="stylesheet" href="assets/bundle/bundle.css" />
     <link rel="stylesheet" href="assets/main.css" />
 
     <meta property="og:title" content="Jason Tseng - Front-End Developer" />
     <meta property="og:url" content="http://jason-tseng.com/" />
-    <!--<meta property="og:description" content="這是一個範例" />-->
-    <!--<meta property="og:image" content="http://12345.com/漂亮的圖片.jpg" />-->
-    <!--<meta property="og:type" content="文章" />-->
+    <meta property="og:description" content="Jason Tseng - Front-End Developer. Personal website with my resume, CV.
+     It contains 'about, experience, skills, education, employment, sample, contact'" />
+    <meta property="og:image" content="http://jason-tseng.com/assets/images/preview.png" />
+    <meta property="og:type" content="website"/>
 </head>
 
 <body class="skin" ng-controller="MainController">
@@ -27,7 +30,7 @@
         <nav>
             <ul id="navigation_menu">
                 <li ng-click="toggleClass(item.order); moveSmoothly(); hideNavigationMenu();" ng-repeat="item in menu_list | orderBy: 'order'">
-                    <a ng-href="#{{item.id}}" ng-bind="item.name"></a>
+                    <a ng-href="{{item.id}}" ng-bind="item.name"></a>
                 </li>
                 <li class="background"></li>
             </ul>
@@ -47,14 +50,13 @@
         <nav>
             <ul id="main_menu">
                 <li ng-click="toggleClass(item.order)" ng-repeat="item in menu_list | orderBy: 'order'">
-                    <a ng-href="#{{item.id}}" ng-bind="item.name"></a>
+                    <a ng-href="{{item.id}}" ng-bind="item.name"></a>
                 </li>
                 <li class="background"></li>
             </ul>
         </nav>
     </section>
 </aside>
-
 
 <div class="content-wrapper show-in-small">
     <section class="content" ng-repeat="item in menu_list" app-part="{{item.id}}" id="{{item.id}}"></section>

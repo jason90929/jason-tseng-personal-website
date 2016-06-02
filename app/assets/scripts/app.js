@@ -28,7 +28,10 @@ app.controller('MainController', ['$scope', '$rootScope', '$location', MainContr
 
     .filter('tel', TelFilter)
 
-    .config(['$routeProvider', function($routeProvider, $locationProvider) {
+    .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+        // Enable pushState in routes.
+        $locationProvider.html5Mode(true).hashPrefix('!');
+
         $routeProvider.when('/home', {
             templateUrl: 'home.html',
             controller: 'HomeController'
@@ -56,4 +59,6 @@ app.controller('MainController', ['$scope', '$rootScope', '$location', MainContr
         }).otherwise({
             redirectTo: '/'
         });
+
+
     }]);

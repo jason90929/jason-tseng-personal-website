@@ -1,18 +1,16 @@
-<div ng-controller="ExperienceController">
-    <h2 class="main-title" ng-bind="title"></h2>
+<h2 class="main-title" ng-bind="title"></h2>
 
-    <article class="indent" ng-repeat="data in experience">
-        <div class="intro-wrapper">
-            <div class="intro">
-                <p class="main-intro" ng-bind="data.name"></p>
-                <p class="main-duration italic" ng-bind="data.duration"></p>
-            </div>
-            <div class="sub indent" ng-repeat="item in data.detail">
-                <p class="sub-intro italic" ng-bind="item.title"></p>
-                <div class="sub-intro" ng-repeat="tag in item.tags">
-                    <a href="" class="tag {{item.tagClass}} italic" ng-bind="tag"></a>
-                </div>
+<article class="indent" ng-repeat="data in experience">
+    <div class="intro-wrapper">
+        <div class="intro">
+            <p class="main-intro" ng-bind="data.name"></p>
+            <p class="main-duration italic" ng-bind="data.duration"></p>
+        </div>
+        <div class="sub indent" ng-repeat="item in data.detail">
+            <p class="sub-intro italic" ng-bind="item.title"></p>
+            <div class="sub-intro" ng-repeat="tag in item.tags">
+                <a href="" class="tag {{item.tagClass}} italic" ng-bind="tag"></a>
             </div>
         </div>
-    </article>
-</div>
+    </div>
+</article>

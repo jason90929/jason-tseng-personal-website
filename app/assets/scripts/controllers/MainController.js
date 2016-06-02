@@ -96,7 +96,7 @@ module.exports = function($scope, $rootScope, $location) {
         $scope.onShowingNavigation = false;
     };
 
-    
+
 
     // 如果縮小時的 Navigation Bar 被開啟，放大後要關起來。
     window.onresize = function() {
