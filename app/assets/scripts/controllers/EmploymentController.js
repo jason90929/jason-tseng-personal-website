@@ -10,7 +10,7 @@ module.exports = function($scope, $rootScope) {
         {
             name_ZH: '弄弄設計',
             name_EN: 'Nong Design Studio',
-            duration: '2014.06 ~ Now'
+            duration: '2016.05 ~ Present'
         }
     ]
 };

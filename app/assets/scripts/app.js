@@ -33,29 +33,21 @@ app.controller('MainController', ['$scope', '$rootScope', '$location', MainContr
         $locationProvider.html5Mode(true).hashPrefix('!');
 
         $routeProvider.when('/home', {
-            templateUrl: 'home.html',
-            controller: 'HomeController'
+            templateUrl: 'home.html'
         }).when('/about', {
-            templateUrl: 'about.html',
-            controller: 'AboutController'
+            templateUrl: 'about.html'
         }).when('/experience', {
-            templateUrl: 'experience.html',
-            controller: 'ExperienceController'
+            templateUrl: 'experience.html'
         }).when('/skills', {
-            templateUrl: 'skills.html',
-            controller: 'SkillsController'
+            templateUrl: 'skills.html'
         }).when('/education', {
-            templateUrl: 'education.html',
-            controller: 'EducationController'
+            templateUrl: 'education.html'
         }).when('/employment', {
-            templateUrl: 'employment.html',
-            controller: 'EmploymentController'
+            templateUrl: 'employment.html'
         }).when('/sample', {
-            templateUrl: 'sample.html',
-            controller: 'SampleController'
+            templateUrl: 'sample.html'
         }).when('/contact', {
-            templateUrl: 'contact.html',
-            controller: 'ContactController'
+            templateUrl: 'contact.html'
         }).otherwise({
             redirectTo: '/'
         });

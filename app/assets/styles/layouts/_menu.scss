@@ -7,6 +7,7 @@
         background: linear-gradient(to top, $black-bg-opacity-dark-color, lighten($black-bg-opacity-dark-color, 10%));
         box-shadow: 0 0 5px 0 lighten($black-bg-opacity-dark-color, 25%) inset;
         z-index: 1;
+        transition: 300ms;
 
         .navigation {
             display: block;

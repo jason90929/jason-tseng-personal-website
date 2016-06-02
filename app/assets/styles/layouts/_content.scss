@@ -3,7 +3,7 @@
         z-index: 0;
         position: relative;
         padding-top: 80px;
-        background: linear-gradient(to top, $black-bg-opacity-color, lighten($black-bg-opacity-color, 15%), $black-bg-opacity-color);
+        background: linear-gradient(to right, $black-bg-opacity-color, lighten($black-bg-opacity-color, 15%), $black-bg-opacity-color);
         box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
         transition: 300ms;
 
@@ -66,6 +66,7 @@
         .sub {
             position: relative;
             display: block;
+            vertical-align: top;
 
             .sub-intro {
                 position: relative;
@@ -77,10 +78,6 @@
                 display: block;
                 clear: both;
             }
-
-            & + .sub {
-                margin-top: 20px;
-            }
         }
     }
 }
@@ -89,12 +86,11 @@
     .content-wrapper {
         position: absolute;
         display: block;
-        top: 20px;
         left: 300px;
         right: 20px;
-        bottom: 20px;
-        overflow-y: auto;
         padding: 0;
+        margin: 20px 0;
+        overflow-y: auto;
         transition: 300ms;
 
         &.show-in-small {
@@ -107,15 +103,14 @@
     }
 
     .content {
-        position: absolute;
         display: block;
-        width: 100%;
+        max-width: 992px;
     }
 
     .intro-wrapper {
-        max-width: 768px;
-
         .intro {
+            max-width: 768px;
+
             display: flex;
             flex-wrap: wrap;
 
@@ -127,13 +122,51 @@
                 flex: 1;
             }
         }
+
+        .sub {
+            position: relative;
+            display: inline-block;
+
+            .sub-intro {
+                position: relative;
+                display: block;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+            }
+        }
     }
 }
 
 @media screen and (min-width: 1200px) {
     .content-wrapper {
-        top: 60px;
-        right: 40px;
-        left: 380px;
+        left: 370px;
+        right: 30px;
+        margin: 50px 0;
+    }
+
+    .content {
+        max-width: inherit;
+    }
+
+    .intro-wrapper {
+        .intro {
+            max-width: 992px;
+        }
+
+        .sub {
+            width: 33%;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .intro-wrapper {
+        .sub {
+            width: 25%;
+        }
     }
 }

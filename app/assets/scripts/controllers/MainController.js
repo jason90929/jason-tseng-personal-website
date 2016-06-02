@@ -46,13 +46,11 @@ module.exports = function($scope, $rootScope, $location) {
         }
     ];
 
-    $scope.href = '';
     $scope.toggleClass = function(i) {
         var $li = $('ul#main_menu > li');
         $li.removeClass('active');
         $li.eq(i - 1).addClass('active');
 
-        $scope.href = $li.eq(i - 1).children('a').attr('href');
         $scope.active = 'active';
     };
 
@@ -71,10 +69,10 @@ module.exports = function($scope, $rootScope, $location) {
         }
     });
 
-    $scope.moveSmoothly = function() {
+    $scope.moveSmoothly = function(target) {
         // scroll animation
         $('html, body').animate({
-            scrollTop: $($scope.href).offset().top - 80
+            scrollTop: $('#' + target).offset().top - 60
         }, 800);
     };
 

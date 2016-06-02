@@ -1,11 +1,16 @@
-<h2 class="main-title" ng-bind="title"></h2>
+<div ng-controller="SkillsController">
+    <h2 class="main-title" ng-bind="title"></h2>
 
-<article class="indent" ng-repeat="items in skills">
-    <h3 class="italic white" ng-bind="items.title"></h3>
-    <p class="" ng-bind="items.content"></p>
+    <article class="indent">
+        <div class="intro-wrapper">
+            <div class="sub indent" ng-repeat="items in skills">
+                <h3 class="italic white" ng-bind="items.title"></h3>
 
-    <div class="sub indent" ng-repeat="item in items.sub">
-        <a href="" class="tag {{item.tagClass}} italic" ng-bind="item.title"></a>
-        <p class="indent" ng-bind="item.content"></p>
-    </div>
-</article>
+                <div class="sub-intro" ng-repeat="item in items.sub">
+                    <a href="javascript:;" class="tag {{item.tagClass}} italic" ng-bind="item.title"></a>
+                    <p class="indent" ng-bind="item.content"></p>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>

@@ -42,97 +42,106 @@
     }
 }
 
-/* All the necesary for making the tag */
-.tag {
-    display: block;
-    float: left;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 6px 12px;
-    line-height: 1;
-    position: relative;
-    margin: 2px 12px;
-    border-width: 1px 1px 1px 0;
-    -moz-border-radius: 0 4.5px 4.5px 0;
-    -webkit-border-radius: 0;
-    border-radius: 0 4.5px 4.5px 0;
+@media screen {
+    /* All the necesary for making the tag */
+    .tag {
+        display: inline-block;
+        float: left;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 6px 12px;
+        line-height: 1;
+        position: relative;
+        margin: 2px 12px;
+        border-width: 1px 1px 1px 0;
+        -moz-border-radius: 0 4.5px 4.5px 0;
+        -webkit-border-radius: 0;
+        border-radius: 0 4.5px 4.5px 0;
 
-    $color: rgb(198, 116, 11); // default color
-    @include custom-color($color);
-    @include box-shadow-before();
-
-    transition: all .3s ease-out;
-
-    &::before, &::after {
-        content: "";
-        position: absolute;
-        display: block;
-        border-width: 1px;
+        $color: rgb(198, 116, 11); // default color
+        @include custom-color($color);
+        @include box-shadow-before();
 
         transition: all .3s ease-out;
+
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            border-width: 1px;
+
+            transition: all .3s ease-out;
+        }
+
+        &::before {
+            z-index: -1;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            -moz-transform: translate(-15px, 0) scale(0.745) rotateZ(-45deg);
+            -ms-transform: translate(-15px, 0) scale(0.745) rotateZ(-45deg);
+            -webkit-transform: translate(-15px, 0) scale(0.745) rotateZ(-45deg);
+            transform: translate(-15px, 0) scale(0.745) rotateZ(-45deg);
+            -moz-border-radius: 6px 0 0 0;
+            -webkit-border-radius: 6px;
+            border-radius: 6px 0 0 0;
+
+            @include color-style($color);
+            @include box-shadow-before();
+        }
+
+        &::after {
+            top: 10.5px;
+            left: -3px;
+            width: 9px;
+            height: 9px;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.6);
+
+            @include color-style($color);
+            @include box-shadow-after();
+        }
+
+        &.red {
+            @include custom-color($red);
+        }
+
+        &.orange {
+            @include custom-color($orange);
+        }
+
+        &.yellow {
+            @include custom-color($yellow);
+        }
+
+        &.green {
+            @include custom-color($green);
+        }
+
+        &.blue {
+            @include custom-color($blue);
+        }
+
+        &.indigo {
+            @include custom-color($indigo);
+        }
+
+        &.purple {
+            @include custom-color($purple);
+        }
+
+        &.gray {
+            @include custom-color($gray);
+        }
     }
+}
 
-    &::before {
-        z-index: -1;
-        left: 0;
-        top: 0;
-        width: 30px;
-        height: 30px;
-        -moz-transform: translate(-15px, 0) scale(0.745) rotateZ(-45deg);
-        -ms-transform: translate(-15px, 0) scale(0.745) rotateZ(-45deg);
-        -webkit-transform: translate(-15px, 0) scale(0.745) rotateZ(-45deg);
-        transform: translate(-15px, 0) scale(0.745) rotateZ(-45deg);
-        -moz-border-radius: 6px 0 0 0;
-        -webkit-border-radius: 6px;
-        border-radius: 6px 0 0 0;
-
-        @include color-style($color);
-        @include box-shadow-before();
-    }
-
-    &::after {
-        top: 10.5px;
-        left: -3px;
-        width: 9px;
-        height: 9px;
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
-        border-radius: 50%;
-        background: rgba(0, 0, 0, 0.6);
-
-        @include color-style($color);
-        @include box-shadow-after();
-    }
-
-    &.red {
-        @include custom-color($red);
-    }
-
-    &.orange {
-        @include custom-color($orange);
-    }
-
-    &.yellow {
-        @include custom-color($yellow);
-    }
-
-    &.green {
-        @include custom-color($green);
-    }
-
-    &.blue {
-        @include custom-color($blue);
-    }
-
-    &.indigo {
-        @include custom-color($indigo);
-    }
-
-    &.purple {
-        @include custom-color($purple);
-    }
-
-    &.gray {
-        @include custom-color($gray);
+@media screen and (min-width: 992px) {
+    .tag {
+        display: inline-block;
+        float: none;
     }
 }

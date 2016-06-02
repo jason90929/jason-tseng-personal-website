@@ -29,8 +29,8 @@
     <section class="navigation">
         <nav>
             <ul id="navigation_menu">
-                <li ng-click="toggleClass(item.order); moveSmoothly(); hideNavigationMenu();" ng-repeat="item in menu_list | orderBy: 'order'">
-                    <a ng-href="{{item.id}}" ng-bind="item.name"></a>
+                <li ng-click="toggleClass(item.order); moveSmoothly(item.id); hideNavigationMenu();" ng-repeat="item in menu_list | orderBy: 'order'">
+                    <a href="javascript:;" ng-bind="item.name"></a>
                 </li>
                 <li class="background"></li>
             </ul>
@@ -49,8 +49,8 @@
     <section class="main-menu">
         <nav>
             <ul id="main_menu">
-                <li ng-click="toggleClass(item.order)" ng-repeat="item in menu_list | orderBy: 'order'">
-                    <a ng-href="{{item.id}}" ng-bind="item.name"></a>
+                <li ng-click="toggleClass(item.order); moveSmoothly(item.id);" ng-repeat="item in menu_list | orderBy: 'order'">
+                    <a href="javascript:;" ng-bind="item.name"></a>
                 </li>
                 <li class="background"></li>
             </ul>
@@ -58,12 +58,8 @@
     </section>
 </aside>
 
-<div class="content-wrapper show-in-small">
+<div class="content-wrapper">
     <section class="content" ng-repeat="item in menu_list" app-part="{{item.id}}" id="{{item.id}}"></section>
-</div>
-
-<div class="content-wrapper show-in-large fade-out" ng-class="active">
-    <section class="content view" ng-view></section>
 </div>
 
 </body>
