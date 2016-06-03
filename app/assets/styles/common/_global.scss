@@ -46,7 +46,6 @@ a {
 }
 
 body.skin {
-    background: #000 url('images/background.jpg') no-repeat center center fixed;
     text-align: justify;
 
     ::-moz-selection {
@@ -56,6 +55,24 @@ body.skin {
     ::selection {
         background: lighten($orange-bg-color, 12%);
         color: #fff;
+    }
+}
+
+@media screen {
+    body.skin {
+        background: #000 url('images/background-sm.jpg') no-repeat center center fixed;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    body.skin {
+        background: #000 url('images/background-md.jpg') no-repeat center center fixed;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    body.skin {
+        background: #000 url('images/background-lg.jpg') no-repeat center center fixed;
     }
 }
 

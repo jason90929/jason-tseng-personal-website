@@ -6,8 +6,11 @@ import sass from 'gulp-ruby-sass';
 import browserify from 'browserify';
 import browserSync from 'browser-sync';
 import source from 'vinyl-source-stream';
+import minifyCSS  from 'gulp-minify-css';
 import bundle from 'gulp-bundle-assets';
 import rimraf from 'gulp-rimraf';
+import uglify from 'gulp-uglify';
+import buffer from 'vinyl-buffer';
 
 const reload = browserSync.reload;
 
@@ -33,12 +36,17 @@ gulp.task('browserify', () => {
     return browserify('app/assets/scripts/app.js')
         .bundle()
         .pipe(source('main.js'))
+        .pipe(buffer()) // <----- convert from streaming to buffered vinyl file object
+        .pipe(uglify()) // now gulp-uglify works
         .pipe(gulp.dest('./public/assets'))
         .pipe(reload({stream: true}));
 });
 
 gulp.task('scss', () => {
     return sass('app/assets/styles/*.scss')
+        .pipe(minifyCSS({
+            keepBreaks: false
+        }))
         .pipe(gulp.dest('./public/assets'))
         .pipe(reload({stream: true}));
 });
