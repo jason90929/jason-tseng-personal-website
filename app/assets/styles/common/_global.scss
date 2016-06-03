@@ -47,6 +47,7 @@ a {
 
 body.skin {
     text-align: justify;
+    overflow-x: hidden;
 
     ::-moz-selection {
         background: lighten($orange-bg-color, 12%);

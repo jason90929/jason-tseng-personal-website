@@ -1,7 +1,7 @@
 @media screen {
     .content-wrapper {
         z-index: 0;
-        position: relative;
+        position: absolute;
         padding-top: 80px;
         background: linear-gradient(to right, $black-bg-opacity-color, lighten($black-bg-opacity-color, 15%), $black-bg-opacity-color);
         box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
@@ -24,6 +24,7 @@
     .content {
         position: relative;
         padding: 20px;
+        word-break: break-all;
 
         .text-indent {
             text-indent: 2em;
@@ -80,7 +81,6 @@
 
 @media screen and (min-width: 992px) {
     .content-wrapper {
-        position: absolute;
         display: block;
         left: 300px;
         right: 20px;
