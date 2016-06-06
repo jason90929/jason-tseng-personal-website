@@ -5,44 +5,39 @@ module.exports = function($scope, $rootScope, $location) {
     
     $scope.menu_list = [
         {
-            id: 'home',
-            name: 'HOME',
-            order: 1
-        },
-        {
             id: 'about',
             name: 'ABOUT',
-            order: 2
+            order: 1
         },
         {
             id: 'experience',
             name: 'EXPERIENCE',
-            order: 3
+            order: 2
         },
         {
             id: 'skills',
             name: 'SKILLS',
-            order: 4
+            order: 3
         },
         {
             id: 'education',
             name: 'EDUCATION',
-            order: 5
+            order: 4
         },
         {
             id: 'employment',
             name: 'EMPLOYMENT',
-            order: 6
+            order: 5
         },
         {
             id: 'sample',
             name: 'SAMPLE',
-            order: 7
+            order: 6
         },
         {
             id: 'contact',
             name: 'CONTACT',
-            order: 8
+            order: 7
         }
     ];
 

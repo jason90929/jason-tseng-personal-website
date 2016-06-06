@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <base href="/">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="cache-control" content="max-age=86400" />
+    <meta http-equiv="expires" content="Sat, 11 Jun 2016 1:00:00 GMT" />
+    <base href="/" />
 
     <title>Jason Tseng - Front-End Developer</title>
 
-    <meta name="description" content="Jason Tseng - Front-End Developer">
-    <meta name="author" content="Jason Tseng">
+    <meta name="description" content="Jason Tseng - Front-End Developer" />
+    <meta name="author" content="Jason Tseng" />
     <meta name="robots" content="index" />
 
-    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="icon" href="assets/images/favicon.ico" />
+
     <link rel="stylesheet" href="assets/bundle/bundle.css" />
     <link rel="stylesheet" href="assets/main.css" />
 
@@ -59,13 +62,23 @@
     </section>
 </aside>
 
+<div class="tour-guide">
+    <div class="flex">
+        <h1 class="text-center text-large white main-shadow">
+            JASON TSENG - Front-End Developer
+        </h1>
+        <h5 class="text-center">
+            This website is still in development phase
+        </h5>
+    </div>
+</div>
+
 <div class="content-wrapper">
     <section class="content" ng-repeat="item in menu_list" app-part="{{item.id}}" id="{{item.id}}"></section>
 </div>
 
-</body>
-
 <script src="assets/bundle/bundle.js"></script>
-<script src="assets/main.js"></script>
+<script src="assets/main.js" defer></script>
 
+</body>
 </html>

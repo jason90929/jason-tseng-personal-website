@@ -11,6 +11,7 @@ import bundle from 'gulp-bundle-assets';
 import rimraf from 'gulp-rimraf';
 import uglify from 'gulp-uglify';
 import buffer from 'vinyl-buffer';
+import htmlmin from 'gulp-htmlmin';
 
 const reload = browserSync.reload;
 
@@ -68,6 +69,7 @@ gulp.task('images', () => {
 gulp.task('html', () => {
     return gulp.src(mainBowerFiles('app/*.html', function (err) {})
         .concat('app/*'))
+        .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('public'))
         .pipe(reload({stream: true}));
 });

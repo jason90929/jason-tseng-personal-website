@@ -1,6 +1,4 @@
 var MainController = require('./controllers/MainController');
-var HomeController = require('./controllers/HomeController');
-var AboutController = require('./controllers/AboutController');
 var ExperienceController = require('./controllers/ExperienceController');
 var SkillsController = require('./controllers/SkillsController');
 var EducationController = require('./controllers/EducationController');
@@ -12,11 +10,9 @@ var AppPartDirective = require('./directive/AppPart');
 
 var TelFilter = require('./filter/Tel');
 
-var app = angular.module('myApp', ['ngRoute', 'ngAnimate']);
+var app = angular.module('myApp', []);
 
 app.controller('MainController', ['$scope', '$rootScope', '$location', MainController])
-    .controller('HomeController', ['$scope', '$rootScope', HomeController])
-    .controller('AboutController', ['$scope', '$rootScope', AboutController])
     .controller('ExperienceController', ['$scope', '$rootScope', ExperienceController])
     .controller('SkillsController', ['$scope', '$rootScope', SkillsController])
     .controller('EducationController', ['$scope', '$rootScope', EducationController])
@@ -26,31 +22,4 @@ app.controller('MainController', ['$scope', '$rootScope', '$location', MainContr
 
     .directive('appPart', AppPartDirective)
 
-    .filter('tel', TelFilter)
-
-    .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-        // Enable pushState in routes.
-        $locationProvider.html5Mode(true).hashPrefix('!');
-
-        $routeProvider.when('/home', {
-            templateUrl: 'home.html'
-        }).when('/about', {
-            templateUrl: 'about.html'
-        }).when('/experience', {
-            templateUrl: 'experience.html'
-        }).when('/skills', {
-            templateUrl: 'skills.html'
-        }).when('/education', {
-            templateUrl: 'education.html'
-        }).when('/employment', {
-            templateUrl: 'employment.html'
-        }).when('/sample', {
-            templateUrl: 'sample.html'
-        }).when('/contact', {
-            templateUrl: 'contact.html'
-        }).otherwise({
-            redirectTo: '/'
-        });
-
-
-    }]);
+    .filter('tel', TelFilter);

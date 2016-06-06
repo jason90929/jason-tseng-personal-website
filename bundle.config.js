@@ -8,20 +8,8 @@ module.exports = {
                     minSrc: './bower_components/jquery/dist/jquery.min.js'
                 },
                 {
-                    src: './bower_components/bootstrap/dist/js/bootstrap.js',
-                    minSrc: './bower_components/bootstrap/dist/js/bootstrap.min.js'
-                },
-                {
                     src: './bower_components/angular/angular.js',
                     minSrc: './bower_components/angular/angular.min.js'
-                },
-                {
-                    src: './bower_components/angular-route/angular-route.js',
-                    minSrc: './bower_components/angular-route/angular-route.min.js'
-                },
-                {
-                    src: './bower_components/angular-animate/angular-animate.js',
-                    minSrc: './bower_components/angular-animate/angular-animate.min.js'
                 }
             ],
             styles: [
