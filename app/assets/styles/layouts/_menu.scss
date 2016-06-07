@@ -137,7 +137,8 @@
             background: linear-gradient(30deg, $orange-bg-color, lighten($orange-bg-color, 20%)); /* Standard syntax */
 
             .show-more {
-                margin: 5px 0 5px 10px;
+                cursor: pointer;
+                margin: 5px 10px;
                 display: inline-block;
                 overflow: hidden;
                 line-height: 38px;

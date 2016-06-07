@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /assets/
+Disallow: about.html
+Disallow: contact.html
+Disallow: education.html
+Disallow: employment.html
+Disallow: experience.html
+Disallow: sample.html
+Disallow: skills.html

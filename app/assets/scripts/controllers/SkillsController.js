@@ -7,53 +7,91 @@ module.exports = function($scope, $rootScope) {
             sub: [
                 {
                     title: 'HTML5',
-                    content: '還算了解'
+                    content: '熟悉'
                 },
                 {
                     title: 'SEO',
-                    content: '尚可'
+                    content: '熟悉，且知道如何優化效能'
                 },
                 {
                     title: 'RWD',
-                    content: '尚可'
+                    content: '還滿熟悉，個人偏好由小裝置為 base 開發到大裝置'
                 },
                 {
                     title: 'SASS/SCSS',
-                    content: '熟練',
+                    content: 'CSS3 開發必學，架構完善又清楚又速度快',
                     tagClass: 'blue'
                 },
                 {
                     title: 'BootStrap',
-                    content: '熟練其中的切版，熟練其中的切版，熟練其中的切版，熟練其中的切版'
+                    content: '主要使用他的 Modal、Pane 居多，也經常使用 Font Awesome'
                 },
                 {
                     title: 'jQuery',
-                    content: '熟悉使用'
+                    content: '前端必學，不解釋'
                 },
                 {
-                    title: 'AngularJS',
-                    content: '大部分熟悉'
+                    title: 'AngularJS 1.x',
+                    content: '架構還算熟悉，會使用 filter、directive、router 等具代表性的 Angular 招牌'
                 }
             ]
         },
         {
-            title: 'Back-End',
+            title: 'Development Tools',
             sub: [
                 {
-                    title: 'Java',
-                    content: '不算熟悉'
+                    title: 'MAC OS X',
+                    content: '個人配備，MacBook Pro Retina, 13", Early 2015'
                 },
                 {
-                    title: 'Struts2',
-                    content: '了解架構'
+                    title: 'IntelliJ IDEA',
+                    content: '個人專屬的開發工具，功能具包含後台且強大，包含使用內建的 SVN、Git，都能完整使用'
                 },
                 {
-                    title: 'Hibernate',
-                    content: '大概知道'
+                    title: 'Atom',
+                    content: '次要的開發工具，僅使用於小型的修改或閱讀用'
                 },
                 {
-                    title: 'Grails',
-                    content: '摸過 2.5.0 前版本的框架'
+                    title: 'Sketch',
+                    content: '熟悉介面操作，主要用於排版居多'
+                },
+                {
+                    title: 'Photoshop',
+                    content: '用於接收設計師網頁稿，並實作 HTML5 網頁；如專案有需求，會做 RWD'
+                }
+            ]
+        },
+        {
+            title: 'Project Manager Tools',
+            sub: [
+                {
+                    title: 'Evernote',
+                    content: '個人記事本，記錄自己一些系統的環境架設步驟，或功能操作步驟'
+                },
+                {
+                    title: 'Trello',
+                    content: '專案與時辰控管'
+                },
+                {
+                    title: 'Slack',
+                    content: '專案控管'
+                }
+            ]
+        },
+        {
+            title: 'System',
+            sub: [
+                {
+                    title: 'Linux',
+                    content: '會使用指令，安裝及架站能力'
+                },
+                {
+                    title: 'AWS',
+                    content: '具備上架網站並上線的能力，會使用 S3 靜態頁面上線至 DNS，也會使用具後台的 EC2 上線'
+                },
+                {
+                    title: 'MAMP',
+                    content: 'MAMP 就是 PC 的 Xampp，開啟 Apache 和 Nginx 之用途。主要用在某些 PHP 專案需要。'
                 }
             ]
         }

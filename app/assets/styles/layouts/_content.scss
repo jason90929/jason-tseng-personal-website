@@ -6,6 +6,18 @@
         vertical-align: middle;
     }
 
+    .fade-in-left {
+        opacity: 0.1;
+        transform: translateX(5%);
+
+        &.active {
+            opacity: 1;
+            transform: none;
+
+            transition: all .5s ease-out;
+        }
+    }
+
     .content-wrapper {
         z-index: 0;
         position: absolute;
@@ -13,6 +25,7 @@
         background: linear-gradient(to right, $black-bg-opacity-color, lighten($black-bg-opacity-color, 15%), $black-bg-opacity-color);
         box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
         transition: 300ms;
+        overflow-y: hidden;
 
         h2 {
             font-size: 30px;
@@ -31,7 +44,6 @@
     .content {
         position: relative;
         padding: 20px;
-        word-break: break-all;
         margin-bottom: 15vh;
 
         .text-indent {
@@ -84,6 +96,14 @@
                 clear: both;
             }
         }
+    }
+
+    .experience-wrapper {
+        overflow: hidden;
+    }
+
+    .break-all {
+        word-break: break-all;
     }
 }
 

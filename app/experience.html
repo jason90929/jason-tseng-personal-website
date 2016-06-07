@@ -1,11 +1,14 @@
 <div ng-controller="ExperienceController">
     <h2 class="main-title" ng-bind="title"></h2>
 
-    <article class="indent" ng-repeat="data in experience">
+    <article class="indent" ng-repeat="data in experience | limitTo: max">
         <div class="intro-wrapper">
             <div class="intro">
                 <p class="main-intro" ng-bind="data.name"></p>
                 <p class="main-duration italic" ng-bind="data.duration"></p>
+            </div>
+            <div class="intro">
+                <p ng-bind="data.intro"></p>
             </div>
 
             <div class="sub indent" ng-repeat="item in data.detail">
@@ -17,5 +20,7 @@
         </div>
     </article>
 
-    <a href="#">查看所有工作經歷</a>
+    <h3 class="text-center">
+        <a href="javascript:;" ng-show="max !== experience.length" ng-click="showAll();">查看所有工作經歷</a>
+    </h3>
 </div>

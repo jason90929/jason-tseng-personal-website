@@ -87,6 +87,19 @@ module.exports = function($scope, $rootScope, $location) {
         else {
             $scope.active = '';
         }
+
+        /* Every time the window is scrolled ... */
+        $(window).scroll(function() {
+            $('.fade-in-left').each(function (i) {
+                var top_of_object = $(this).offset().top;
+                var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+                /* If the object is completely visible in the window, fade it it */
+                if (bottom_of_window > top_of_object) {
+                    $(this).addClass('active');
+                }
+            });
+        });
     });
 
     // 如果縮小時的 Navigation Bar 被開啟，放大後要關起來。
@@ -94,5 +107,11 @@ module.exports = function($scope, $rootScope, $location) {
         if (window.innerWidth > 992 && $scope.onShowingNavigation) {
             $scope.hideNavigationMenu();
         }
+    };
+
+    window.onload = function() {
+        setTimeout (function () {
+            scrollTo(0,0);
+        }, 100); //100ms for example
     };
 };

@@ -1,7 +1,7 @@
 <div ng-controller="SampleController">
     <h2 class="main-title" ng-bind="title"></h2>
 
-    <p>
-
-    </p>
+    <h3 class="indent" ng-repeat="item in sample">
+        <a ng-href="{{item.url}}" target="_blank" ng-bind="item.name"></a>
+    </h3>
 </div>

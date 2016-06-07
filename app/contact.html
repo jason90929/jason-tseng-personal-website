@@ -3,6 +3,6 @@
 
     <h3 class="indent" ng-repeat="item in profile">
         <i ng-if="item.icon" class="white fa fa-{{item.icon}}"></i>
-        <span class="italic {{item.click ? 'cursor' : ''}}" ng-bind="item.name{{item.filter ? ' | ' + item.filter : ''}}" ng-click="item.click(item.name)" rel=“nofollow”></span>
+        <span class="break-all italic {{item.click ? 'cursor' : ''}}" ng-bind="item.name{{item.filter ? ' | ' + item.filter : ''}}" ng-click="item.click(item.name)" rel=“nofollow”></span>
     </h3>
 </div>
