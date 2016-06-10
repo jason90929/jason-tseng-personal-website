@@ -5,21 +5,38 @@
         width: 100%;
         height: 0;
         background: linear-gradient(to top, $black-bg-opacity-dark-color, lighten($black-bg-opacity-dark-color, 10%));
+        -webkit-box-shadow: 0 0 5px 0 lighten($black-bg-opacity-dark-color, 25%) inset;
+        -moz-box-shadow: 0 0 5px 0 lighten($black-bg-opacity-dark-color, 25%) inset;
         box-shadow: 0 0 5px 0 lighten($black-bg-opacity-dark-color, 25%) inset;
         z-index: 1;
-        transition: 300ms;
+        
+        -webkit-transition: all .3s linear;   
+        -moz-transition: all .3s linear;                         
+        -ms-transition: all .3s linear;                        
+        -o-transition: all .3s linear;
+        transition: all .3s linear;
 
         .navigation {
             display: block;
+            -webkit-transform: translateX(-100%);
+            -moz-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+            -o-transform: translateX(-100%);
             transform: translateX(-100%);
+
             width: 80%;
             padding-top: 30px;
             position: absolute;
             text-align: right;
             z-index: 1;
-            transition: 300ms;
             height: 100vh;
             background-color: black;
+
+            -webkit-transition: all .3s linear;
+            -moz-transition: all .3s linear;
+            -ms-transition: all .3s linear;
+            -o-transition: all .3s linear;
+            transition: all .3s linear;
 
             ul {
                 margin-bottom: 74px;
@@ -33,11 +50,17 @@
                     line-height: 46px;
 
                     &.background {
+                        -webkit-box-shadow: 0 0 10px 0 rgba(255, 255, 255, .1) inset;
+                        -moz-box-shadow: 0 0 10px 0 rgba(255, 255, 255, .1) inset;
                         box-shadow: 0 0 10px 0 rgba(255, 255, 255, .1) inset;
                         position: absolute;
                         top: -102px;
                         display: block;
                         z-index: -1;
+                        -webkit-transition: 0.35s ease-out 0s;
+                        -moz-transition: 0.35s ease-out 0s;
+                        -ms-transition: 0.35s ease-out 0s;
+                        -o-transition: 0.35s ease-out 0s;
                         transition: 0.35s ease-out 0s;
 
                         $background-color: rgba(255, 255, 255, .3);
@@ -51,7 +74,12 @@
 
                     a {
                         display: block;
+                        -webkit-transform: skew(0deg);
+                        -moz-transform: skew(0deg);
+                        -ms-transform: skew(0deg);
+                        -o-transform: skew(0deg);
                         transform: skew(0deg);
+                        
                         padding-right: 20px;
                         height: inherit;
                         line-height: inherit;
@@ -68,6 +96,10 @@
                     &.active,
                     &:hover {
                         a {
+                            -webkit-transform: skew(-2deg);
+                            -moz-transform: skew(-2deg);
+                            -ms-transform: skew(-2deg);
+                            -o-transform: skew(-2deg);
                             transform: skew(-2deg);
                             line-height: 48px;
                             padding-right: 25px;
@@ -110,12 +142,22 @@
             background: rgba(255, 255, 255, .4);
             visibility: hidden;
             opacity: 0;
-            transition: 300ms;
+
+            -webkit-transition: all .3s linear;
+            -moz-transition: all .3s linear;
+            -ms-transition: all .3s linear;
+            -o-transition: all .3s linear;
+            transition: all .3s linear;
 
             &.active {
                 visibility: visible;
                 opacity: 1;
-                transition: 300ms;
+
+                -webkit-transition: all .3s linear;
+                -moz-transition: all .3s linear;
+                -ms-transition: all .3s linear;
+                -o-transition: all .3s linear;
+                transition: all .3s linear;
             }
         }
 
@@ -128,7 +170,12 @@
             display: block;
             vertical-align: bottom;
             z-index: 1;
-            transition: 300ms;
+
+            -webkit-transition: all .3s linear;
+            -moz-transition: all .3s linear;
+            -ms-transition: all .3s linear;
+            -o-transition: all .3s linear;
+            transition: all .3s linear;
 
             background: $orange-bg-color; /* For browsers that do not support gradients */
             background: -webkit-linear-gradient(30deg, $orange-bg-color, lighten($orange-bg-color, 20%)); /* For Safari 5.1 to 6.0 */
@@ -182,8 +229,13 @@
             position: absolute;
             text-align: right;
             z-index: 0;
-            transition: 300ms;
             height: 100vh;
+
+            -webkit-transition: all .3s linear;
+            -moz-transition: all .3s linear;
+            -ms-transition: all .3s linear;
+            -o-transition: all .3s linear;
+            transition: all .3s linear;
 
             ul {
                 margin-top: 41px;
@@ -198,11 +250,18 @@
                     line-height: 46px;
 
                     &.background {
+                        -webkit-box-shadow: 0 0 10px 0 rgba(255, 255, 255, .1) inset;
+                        -moz-box-shadow: 0 0 10px 0 rgba(255, 255, 255, .1) inset;
                         box-shadow: 0 0 10px 0 rgba(255, 255, 255, .1) inset;
                         position: absolute;
                         top: -102px;
                         display: block;
                         z-index: -1;
+
+                        -webkit-transition: 0.35s ease-out 0s;
+                        -moz-transition: 0.35s ease-out 0s;
+                        -ms-transition: 0.35s ease-out 0s;
+                        -o-transition: 0.35s ease-out 0s;
                         transition: 0.35s ease-out 0s;
 
                         $background-color: rgba(255, 255, 255, .3);
@@ -216,6 +275,10 @@
 
                     a {
                         display: block;
+                        -webkit-transform: skew(0deg);
+                        -moz-transform: skew(0deg);
+                        -ms-transform: skew(0deg);
+                        -o-transform: skew(0deg);
                         transform: skew(0deg);
                         padding-right: 20px;
                         height: inherit;
@@ -233,6 +296,10 @@
                     &.active,
                     &:hover {
                         a {
+                            -webkit-transform: skew(-2deg);
+                            -moz-transform: skew(-2deg);
+                            -ms-transform: skew(-2deg);
+                            -o-transform: skew(-2deg);
                             transform: skew(-2deg);
                             line-height: 48px;
                             padding-right: 25px;
@@ -306,6 +373,10 @@
         }
 
         .main-menu {
+            -webkit-transform: translateX(0);
+            -moz-transform: translateX(0);
+            -ms-transform: translateX(0);
+            -o-transform: translateX(0);
             transform: translateX(0);
             width: 100%;
             margin-top: 30px;
@@ -317,7 +388,7 @@
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
     .main-aside {
         left: 60px;
 

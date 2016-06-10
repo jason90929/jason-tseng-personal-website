@@ -61,7 +61,11 @@
         $color: rgb(198, 116, 11); // default color
         @include custom-color($color);
         @include box-shadow-before();
-
+        
+        -webkit-transition: all .3s ease-out;
+        -moz-transition: all .3s ease-out;
+        -ms-transition: all .3s ease-out;
+        -o-transition: all .3s ease-out;
         transition: all .3s ease-out;
 
         &::before, &::after {
@@ -70,6 +74,10 @@
             display: block;
             border-width: 1px;
 
+            -webkit-transition: all .3s ease-out;
+            -moz-transition: all .3s ease-out;
+            -ms-transition: all .3s ease-out;
+            -o-transition: all .3s ease-out;
             transition: all .3s ease-out;
         }
 
@@ -81,6 +89,7 @@
             height: 30px;
             -moz-transform: translate(-15px, 0) scale(0.745) rotateZ(-45deg);
             -ms-transform: translate(-15px, 0) scale(0.745) rotateZ(-45deg);
+            -o-transform: translate(-15px, 0) scale(0.745) rotateZ(-45deg);
             -webkit-transform: translate(-15px, 0) scale(0.745) rotateZ(-45deg);
             transform: translate(-15px, 0) scale(0.745) rotateZ(-45deg);
             -moz-border-radius: 6px 0 0 0;
@@ -99,7 +108,7 @@
             -moz-border-radius: 50%;
             -webkit-border-radius: 50%;
             border-radius: 50%;
-            background: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.6);
 
             @include color-style($color);
             @include box-shadow-after();
