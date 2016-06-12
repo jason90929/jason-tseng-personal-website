@@ -59,38 +59,42 @@ module.exports = function($scope, $rootScope, $location) {
     $scope.onShowingNavigation = false;
 
     $scope.showNavigationMenu = function() {
-        $('.navigation').css('transform', 'translateX(0)');
-        $('.main-intro').css('transform', 'translateX(80%)');
+        $('.main-menu').addClass('active');
+        $('.main-header').css('transform', 'translateX(80%)');
+        $('.tour-guide').css('transform', 'translateX(80%)');
         $('.content-wrapper').css('transform', 'translateX(80%)');
 
+        disableScroll();
         $scope.onShowingNavigation = true;
     };
 
     $scope.hideNavigationMenu = function() {
-        $('.navigation').css('transform', 'translateX(-100%)');
-        $('.main-intro').css('transform', 'translateX(0)');
+        $('.main-menu').removeClass('active');
+        $('.main-header').css('transform', 'translateX(0)');
+        $('.tour-guide').css('transform', 'translateX(0)');
         $('.content-wrapper').css('transform', 'translateX(0)');
 
+        enableScroll();
         $scope.onShowingNavigation = false;
     };
 
     $(document).ready(function() {
         // refresh 後要知道自己在哪個路徑
-        if ($location.$$path !== '/') {
-            for (var i = 0; i < $scope.menu_list.length; i++) {
-                if ($location.$$path === '/' + $scope.menu_list[i].id) {
-                    $scope.toggleClass(i + 1);
-                    break;
-                }
-            }
-        }
-        else {
-            $scope.active = '';
-        }
+        // if ($location.$$path !== '/') {
+        //     for (var i = 0; i < $scope.menu_list.length; i++) {
+        //         if ($location.$$path === '/' + $scope.menu_list[i].id) {
+        //             $scope.toggleClass(i + 1);
+        //             break;
+        //         }
+        //     }
+        // }
+        // else {
+        //     $scope.active = '';
+        // }
 
         /* Every time the window is scrolled ... */
         $(window).scroll(function() {
-            $('.fade-in-left').each(function (i) {
+            $('.fade-in').each(function (i) {
                 var top_of_object = $(this).offset().top;
                 var bottom_of_window = $(window).scrollTop() + $(window).height();
 
@@ -115,3 +119,39 @@ module.exports = function($scope, $rootScope, $location) {
         }, 100); //100ms for example
     };
 };
+
+// left: 37, up: 38, right: 39, down: 40,
+// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+function preventDefault(e) {
+    e = e || window.event;
+    if (e.preventDefault)
+        e.preventDefault();
+    e.returnValue = false;
+}
+
+function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+
+function disableScroll() {
+    if (window.addEventListener) // older FF
+        window.addEventListener('DOMMouseScroll', preventDefault, false);
+    window.onwheel = preventDefault; // modern standard
+    window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+    window.ontouchmove  = preventDefault; // mobile
+    document.onkeydown  = preventDefaultForScrollKeys;
+}
+
+function enableScroll() {
+    if (window.removeEventListener)
+        window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.onmousewheel = document.onmousewheel = null;
+    window.onwheel = null;
+    window.ontouchmove = null;
+    document.onkeydown = null;
+}

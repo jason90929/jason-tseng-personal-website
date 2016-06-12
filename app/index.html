@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <meta http-equiv="cache-control" content="max-age=86400" />
-    <meta http-equiv="expires" content="Sat, 11 Jun 2016 1:00:00 GMT" />
     <base href="/" />
 
     <title>Jason Tseng - Front-End Developer</title>
@@ -28,38 +26,25 @@
 
 <body class="skin" ng-controller="MainController">
 
-<aside class="main-aside">
-    <section class="navigation">
-        <nav>
-            <ul id="navigation_menu">
-                <li ng-click="toggleClass(item.order); moveSmoothly(item.id); hideNavigationMenu();" ng-repeat="item in menu_list | orderBy: 'order'">
-                    <a href="javascript:;" ng-bind="item.name"></a>
-                </li>
-                <li class="background"></li>
-            </ul>
-        </nav>
-    </section>
+<div class="navigation-mask {{onShowingNavigation ? 'active' : ''}}" ng-click="hideNavigationMenu();"></div>
 
-    <div class="navigation-mask {{onShowingNavigation ? 'active' : ''}}" ng-click="hideNavigationMenu();"></div>
+<header class="main-header">
+    <div class="show-more" ng-click="showNavigationMenu();">
+        <i class="fa fa-list"></i>
+    </div>
+    <h1 class="name">JASON TSENG</h1>
+    <h3 class="title">FRONT-END DEVELOPER</h3>
+</header>
 
-    <header class="main-intro">
-        <div class="show-more" ng-click="showNavigationMenu();">
-            <i class="fa fa-list"></i>
-        </div>
-        <h1 class="name">JASON TSENG</h1>
-        <h3 class="title">FRONT-END DEVELOPER</h3>
-    </header>
-
-    <section class="main-menu">
-        <nav>
-            <ul id="main_menu">
-                <li ng-click="toggleClass(item.order); moveSmoothly(item.id);" ng-repeat="item in menu_list | orderBy: 'order'">
-                    <a href="javascript:;" ng-bind="item.name"></a>
-                </li>
-                <li class="background"></li>
-            </ul>
-        </nav>
-    </section>
+<aside class="main-menu">
+    <nav>
+        <ul id="main_menu">
+            <li ng-click="toggleClass(item.order); moveSmoothly(item.id); hideNavigationMenu();" ng-repeat="item in menu_list | orderBy: 'order'">
+                <a href="javascript:;" ng-bind="item.name"></a>
+            </li>
+            <li class="background"></li>
+        </ul>
+    </nav>
 </aside>
 
 <div class="tour-guide">
@@ -74,7 +59,7 @@
 </div>
 
 <div class="content-wrapper">
-    <section class="content fade-in-left" ng-repeat="item in menu_list" app-part="{{item.id}}" id="{{item.id}}"></section>
+    <section class="content fade-in" ng-repeat="item in menu_list" app-part="{{item.id}}" id="{{item.id}}"></section>
 </div>
 
 <script src="assets/bundle/bundle.js"></script>
