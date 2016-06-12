@@ -1,19 +1,6 @@
 <div ng-controller="ExperienceController">
     <h2 class="main-title" ng-bind="title"></h2>
 
-    <div class="info">
-        <span class="info-icon">
-            <i class="fa fa-info"></i>
-        </span>
-
-        <div class="chromatogram-wrapper">
-            <div class="chromatogram-left">非常熟悉</div>
-            <div class="chromatogram-right">不熟悉</div>
-            <div class="chromatogram"></div>
-        </div>
-    </div>
-
-
     <article class="indent" ng-repeat="data in experience | limitTo: max">
         <div class="intro-wrapper">
             <div class="intro">

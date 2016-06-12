@@ -1,6 +1,19 @@
 <div ng-controller="SkillsController">
     <h2 class="main-title" ng-bind="title"></h2>
 
+    <div class="info">
+        <span class="info-icon">
+            <i class="fa fa-info"></i>
+        </span>
+
+        <div class="chromatogram-wrapper">
+            <div class="dialog"></div>
+            <!--<div class="chromatogram-left">非常熟練</div>-->
+            <!--<div class="chromatogram-right">不熟練</div>-->
+            <!--<div class="chromatogram"></div>-->
+        </div>
+    </div>
+
     <article class="indent">
         <div class="intro-wrapper">
             <div class="sub indent" ng-repeat="items in skills">
