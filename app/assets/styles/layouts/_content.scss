@@ -206,11 +206,11 @@
             -moz-border-radius: 8px;
             border-radius: 8px;
 
-            -webkit-transform: scale(.9) rotate(20deg) skew(-15deg);
-            -moz-transform: scale(.9) rotate(20deg) skew(-15deg);
-            -ms-transform: scale(.9) rotate(20deg) skew(-15deg);
-            -o-transform: scale(.9) rotate(20deg) skew(-15deg);
-            transform: scale(.9) rotate(20deg) skew(-15deg);
+            -webkit-transform: scale(.9) rotate(20deg) skew(-10deg);
+            -moz-transform: scale(.9) rotate(20deg) skew(-10deg);
+            -ms-transform: scale(.9) rotate(20deg) skew(-10deg);
+            -o-transform: scale(.9) rotate(20deg) skew(-10deg);
+            transform: scale(.9) rotate(20deg) skew(-10deg);
 
             transform-origin: left 80%;
 
@@ -220,13 +220,17 @@
             -o-transition: all .3s ease-out;
             transition: all .3s ease-out;
 
-            .dialog {
+            .cusp {
                 position: absolute;
                 left: -20px;
                 top: 26px;
                 border-width: 10px;
                 border-style: solid dashed dashed;
                 border-color: transparent #f1fbe5 transparent transparent;
+            }
+
+            .text {
+                color: inherit;
             }
 
             .chromatogram-left {

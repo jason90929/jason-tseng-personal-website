@@ -1,16 +1,16 @@
-var MainController = require('./controllers/MainController');
-var ExperienceController = require('./controllers/ExperienceController');
-var SkillsController = require('./controllers/SkillsController');
-var EducationController = require('./controllers/EducationController');
-var EmploymentController = require('./controllers/EmploymentController');
-var SampleController = require('./controllers/SampleController');
-var ContactController = require('./controllers/ContactController');
+let MainController = require('./controllers/MainController');
+let ExperienceController = require('./controllers/ExperienceController');
+let SkillsController = require('./controllers/SkillsController');
+let EducationController = require('./controllers/EducationController');
+let EmploymentController = require('./controllers/EmploymentController');
+let SampleController = require('./controllers/SampleController');
+let ContactController = require('./controllers/ContactController');
 
-var AppPartDirective = require('./directive/AppPart');
+let AppPartDirective = require('./directive/AppPart');
 
-var TelFilter = require('./filter/Tel');
+let TelFilter = require('./filter/Tel');
 
-var app = angular.module('myApp', []);
+let app = angular.module('myApp', []);
 
 app.controller('MainController', ['$scope', '$rootScope', '$location', MainController])
     .controller('ExperienceController', ['$scope', '$rootScope', ExperienceController])

@@ -1,0 +1,21 @@
+//一堆泡泡
+.bubble-wrapper {
+    position: absolute;
+    transform: translate3d(0,0,0);
+    width: 100vw;
+    height: 100vh;
+
+    > .bubble {
+        position: absolute;
+
+        &:nth-child(1n) {
+            opacity: 0.4;
+        }
+        &:nth-child(2n) {
+            opacity: 0.25;
+        }
+        &:nth-child(3n) {
+            opacity: 0.1;
+        }
+    }
+}

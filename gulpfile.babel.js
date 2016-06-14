@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 var gulpsync = require('gulp-sync')(gulp);
 // import gulpsync from 'gulp-sync';
+import gulpLoadPlugins from 'gulp-load-plugins';
 import mainBowerFiles from 'main-bower-files';
 import sass from 'gulp-ruby-sass';
 import browserify from 'browserify';
@@ -13,6 +14,7 @@ import uglify from 'gulp-uglify';
 import buffer from 'vinyl-buffer';
 import htmlmin from 'gulp-htmlmin';
 
+const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
 gulp.task('watch', ['browserify', 'scss', 'fonts', 'images', 'html'], () => {
@@ -34,10 +36,15 @@ gulp.task('connect', () => {
 });
 
 gulp.task('browserify', () => {
-    return browserify('app/assets/scripts/app.js')
+    // return browserify('app/assets/scripts/app.js')
+    return browserify({
+        entries: [
+            'app/assets/scripts/app.js'
+        ]})
         .bundle()
         .pipe(source('main.js'))
         .pipe(buffer()) // <----- convert from streaming to buffered vinyl file object
+        .pipe($.babel()) // ES6
         .pipe(uglify()) // now gulp-uglify works
         .pipe(gulp.dest('./public/assets'))
         .pipe(reload({stream: true}));

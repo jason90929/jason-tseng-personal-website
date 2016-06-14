@@ -9,13 +9,11 @@ module.exports = function($scope, $rootScope) {
             detail: [
                 {
                     title: 'Front-End',
-                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'SCSS / SASS', 'Gulp', 'Bower', 'Npm'],
-                    tagClass: 'red'
+                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'SCSS / SASS', 'Gulp', 'Bower', 'Npm']
                 },
                 {
                     title: 'Tools',
-                    tags: ['IntelliJ IDEA'],
-                    tagClass: 'red'
+                    tags: ['IntelliJ IDEA']
                 }
             ]
         },
@@ -26,18 +24,15 @@ module.exports = function($scope, $rootScope) {
             detail: [
                 {
                     title: 'Front-End',
-                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'RequireJS', 'AngularJs'],
-                    tagClass: 'gray'
+                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'RequireJS', 'AngularJs']
                 },
                 {
                     title: 'Back-End',
-                    tags: ['Java', 'Struts2', 'Hibernate'],
-                    tagClass: 'gray'
+                    tags: ['Java', 'Struts2', 'Hibernate']
                 },
                 {
                     title: 'Tools',
-                    tags: ['IntelliJ IDEA'],
-                    tagClass: 'gray'
+                    tags: ['IntelliJ IDEA']
                 }
             ]
         },
@@ -48,18 +43,15 @@ module.exports = function($scope, $rootScope) {
             detail: [
                 {
                     title: 'Front-End',
-                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery'],
-                    tagClass: 'purple'
+                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery']
                 },
                 {
                     title: 'Back-End',
-                    tags: ['Java', 'Struts2', 'Hibernate', 'MySQL'],
-                    tagClass: 'purple'
+                    tags: ['Java', 'Struts2', 'Hibernate', 'MySQL']
                 },
                 {
                     title: 'Tools',
-                    tags: ['Eclipse', 'iReport', 'DBVisualizer'],
-                    tagClass: 'purple'
+                    tags: ['Eclipse', 'iReport', 'DBVisualizer']
                 }
             ]
         },
@@ -70,18 +62,15 @@ module.exports = function($scope, $rootScope) {
             detail: [
                 {
                     title: 'Front-End',
-                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'AngularJS'],
-                    tagClass: 'indigo'
+                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'AngularJS']
                 },
                 {
                     title: 'Back-End',
-                    tags: ['Groovy', 'Grails', 'H2DB'],
-                    tagClass: 'indigo'
+                    tags: ['Groovy', 'Grails', 'H2DB']
                 },
                 {
                     title: 'Tools',
-                    tags: ['IntelliJ IDEA', 'H2'],
-                    tagClass: 'indigo'
+                    tags: ['IntelliJ IDEA', 'H2']
                 }
             ]
         },
@@ -92,18 +81,15 @@ module.exports = function($scope, $rootScope) {
             detail: [
                 {
                     title: 'Front-End',
-                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'AngularJS'],
-                    tagClass: 'blue'
+                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'AngularJS']
                 },
                 {
                     title: 'Back-End',
-                    tags: ['Groovy', 'Grails', 'MongoDB'],
-                    tagClass: 'blue'
+                    tags: ['Groovy', 'Grails', 'MongoDB']
                 },
                 {
                     title: 'Tools',
-                    tags: ['IntelliJ IDEA', 'MongoDB'],
-                    tagClass: 'blue'
+                    tags: ['IntelliJ IDEA', 'MongoDB']
                 }
             ]
         },
@@ -114,18 +100,15 @@ module.exports = function($scope, $rootScope) {
             detail: [
                 {
                     title: 'Front-End',
-                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'AngularJS'],
-                    tagClass: 'green'
+                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'AngularJS']
                 },
                 {
                     title: 'Back-End',
-                    tags: ['Groovy', 'Grails', 'H2DB'],
-                    tagClass: 'green'
+                    tags: ['Groovy', 'Grails', 'H2DB']
                 },
                 {
                     title: 'Tools',
-                    tags: ['IntelliJ IDEA', 'iReport', 'H2'],
-                    tagClass: 'green'
+                    tags: ['IntelliJ IDEA', 'iReport', 'H2']
                 }
             ]
         },
@@ -136,18 +119,15 @@ module.exports = function($scope, $rootScope) {
             detail: [
                 {
                     title: 'Front-End',
-                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'AngularJS'],
-                    tagClass: 'yellow'
+                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'AngularJS']
                 },
                 {
                     title: 'Back-End',
-                    tags: ['Groovy', 'Grails', 'H2DB'],
-                    tagClass: 'yellow'
+                    tags: ['Groovy', 'Grails', 'H2DB']
                 },
                 {
                     title: 'Tools',
-                    tags: ['IntelliJ IDEA', 'H2'],
-                    tagClass: 'yellow'
+                    tags: ['IntelliJ IDEA', 'H2']
                 }
             ]
         },
@@ -158,18 +138,15 @@ module.exports = function($scope, $rootScope) {
             detail: [
                 {
                     title: 'Front-End',
-                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'AngularJS'],
-                    tagClass: 'orange'
+                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'AngularJS']
                 },
                 {
                     title: 'Back-End',
-                    tags: ['Groovy', 'Grails', 'H2DB'],
-                    tagClass: 'orange'
+                    tags: ['Groovy', 'Grails', 'H2DB']
                 },
                 {
                     title: 'Tools',
-                    tags: ['IntelliJ IDEA', 'H2'],
-                    tagClass: 'orange'
+                    tags: ['IntelliJ IDEA', 'H2']
                 }
             ]
         },
@@ -180,18 +157,15 @@ module.exports = function($scope, $rootScope) {
             detail: [
                 {
                     title: 'Front-End',
-                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'AngularJS', 'Ionic'],
-                    tagClass: 'red'
+                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'AngularJS', 'Ionic']
                 },
                 {
                     title: 'Back-End',
-                    tags: ['NodeJS', 'Cordova'],
-                    tagClass: 'red'
+                    tags: ['NodeJS', 'Cordova']
                 },
                 {
                     title: 'Tools',
-                    tags: ['IntelliJ IDEA', 'Parse', 'Cloudinary', 'MailGun'],
-                    tagClass: 'red'
+                    tags: ['IntelliJ IDEA', 'Parse', 'Cloudinary', 'MailGun']
                 }
             ]
         }

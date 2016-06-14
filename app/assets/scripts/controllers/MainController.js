@@ -118,12 +118,18 @@ module.exports = function($scope, $rootScope, $location) {
             scrollTo(0,0);
         }, 100); //100ms for example
     };
+
+    if (window.innerWidth > 992) {
+        bubble(40, 300);
+    }
+    else {
+        bubble(20, 200);
+    }
 };
 
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
 var keys = {37: 1, 38: 1, 39: 1, 40: 1};
-
 function preventDefault(e) {
     e = e || window.event;
     if (e.preventDefault)
@@ -154,4 +160,81 @@ function enableScroll() {
     window.onwheel = null;
     window.ontouchmove = null;
     document.onkeydown = null;
+}
+
+// 都是泡泡
+function bubble(amount, maxSize) {
+    const container = document.getElementById('bubble');
+    const fragment = document.createDocumentFragment(); // https://developer.mozilla.org/en-US/docs/Web/API/Document/createDocumentFragment
+    const minSize = 20;
+    // const maxSize = 300;
+    const distance = 12; // How far elements can travel. Using REM in this pen.
+    // const amount = 40; // Num of elements to generate
+
+    function begin() {
+        for(let i = 0; i < amount; i++) {
+            $(fragment).append(createElement());
+        }
+        container.appendChild(fragment); // append all dynamically created elements at once
+        generateAnimation(); // then build their animation
+    }
+
+    function createElement() {
+        const diameter = Math.floor(Math.random() * maxSize + minSize) -1;
+        const size = 150; // 大小固定
+        const size_imp = Math.floor(Math.random() * 8) + 1;
+        const rotate_way = Math.floor(Math.random() * 2); // 順時針與逆時針
+
+        return ('<svg id="organic-blob" class="bubble" style="top: ' + Math.floor(Math.random() * 80) + '%; left: ' + Math.floor(Math.random() * 80) + '%;"' +
+        ' width="' + diameter + '" height="' + diameter + '" xmlns="http://www.w3.org/2000/svg" fill="#fff">' +
+        '<g>' +
+        '<circle r="' + diameter / 3 + '" cy="' + (diameter / 300) * (size - size_imp) + '" cx="' + (diameter / 300) * size + '">' +
+        '<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="' + (rotate_way ? 0 : 360) + ' ' +
+        (diameter / 300) * (size - size_imp) + ' ' + (diameter / 300) * size + '" to="' + (rotate_way ? 360 : 0) + ' ' + (diameter / 300) * (size - size_imp) + ' ' +
+        (diameter / 300) * size + '" dur="' + Math.floor(Math.random() * 8) + 2 + 's" repeatCount="indefinite"/>' +
+        '</circle>' +
+        '<circle r="' + diameter / 3 + '" cy="' + (diameter / 300) * (size + size_imp) + '" cx="' + (diameter / 300) * size + '">' +
+        '<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="' + (rotate_way ? 360 : 0) + ' ' +
+        (diameter / 300) * (size + size_imp) + ' ' + (diameter / 300) * size + '" to="' + (rotate_way ? 0 : 360) + ' ' + (diameter / 300) * (size + size_imp) + ' ' +
+        (diameter / 300) * size + '" dur="' + Math.floor(Math.random() * 8) + 2 + 's" repeatCount="indefinite"/>' +
+        '</circle>' +
+        '<circle r="' + diameter / 3 + '" cy="' + (diameter / 300) * size + '" cx="' + (diameter / 300) * (size - size_imp) + '">' +
+        '<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="' + (rotate_way ? 0 : 360) + ' ' +
+        (diameter / 300) * size + ' ' + (diameter / 300) * 145 + '" to="' + (rotate_way ? 360 : 0) + ' ' + (diameter / 300) * size + ' ' +
+        (diameter / 300) * (size - size_imp) + '" dur="' + Math.floor(Math.random() * 8) + 2.5 + 's" repeatCount="indefinite"/>' +
+        '</circle>' +
+        '<circle r="' + diameter / 3 + '" cy="' + (diameter / 300) * size + '" cx="' + (diameter / 300) * (size + size_imp) + '">' +
+        '<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="' + (rotate_way ? 360 : 0) + ' ' +
+        (diameter / 300) * size + ' ' + (diameter / 300) * 155 + '" to="' + (rotate_way ? 0 : 360) + ' ' + (diameter / 300) * size + ' ' +
+        (diameter / 300) * (size + 5) + '" dur="' + Math.floor(Math.random() * 8) + 3 + 's" repeatCount="indefinite"/>' +
+        '</circle>' +
+        '</g>' +
+        '</svg>');
+    }
+
+    function generateAnimation() {
+        let collection = document.querySelectorAll('#bubble > svg');
+        collection = Array.prototype.slice.call(collection);
+
+        collection.forEach(function(element) {
+            element.animate([
+                { transform: 'translate(0,0)' },
+                { transform: 'translate('+getDistance()+'rem,'+getDistance()+'rem)' }
+            ], {
+                duration: (Math.random() + 1) * 10000,
+                direction: 'alternate',
+                easing: 'ease-in-out',
+                fill: 'both',
+                iterations: Infinity
+            });
+        });
+    }
+
+    // Generates a random +/- number
+    function getDistance() {
+        let num = Math.floor(Math.random()*distance) + 1;
+        return num *= Math.floor(Math.random()*2) === 1 ? 1 : -1;
+    }
+
+    begin();
 }
