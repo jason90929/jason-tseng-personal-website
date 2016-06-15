@@ -1,12 +1,25 @@
 //一堆泡泡
 .bubble-wrapper {
     position: absolute;
+    width: 100%;
+    height: 100%;
+
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
-    width: 100vw;
-    height: 100vh;
 
     > .bubble {
         position: absolute;
+
+        @for $i from 1 through 40 {
+            &:nth-child(#{$i}) {
+                -webkit-animation: ((random(10000) + 10000) / 1000) + s bubble-moving- + (random(24)-12) + (random(24)-12) alternate ease-in-out infinite;
+                -o-animation: ((random(10000) + 10000) / 1000) + s bubble-moving- + (random(24)-12) + (random(24)-12) alternate ease-in-out infinite;
+                animation: ((random(10000) + 10000) / 1000) + s bubble-moving- + (random(24)-12) + (random(24)-12) alternate ease-in-out infinite;
+            }
+        }
 
         &:nth-child(1n) {
             opacity: 0.4;
@@ -16,6 +29,35 @@
         }
         &:nth-child(3n) {
             opacity: 0.1;
+        }
+    }
+}
+
+@for $i from -12 through 12 {
+    @for $j from -12 through 12 {
+        @keyframes bubble-moving-#{$i}#{$j} {
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(#{$i}rem, #{$j}rem);
+            }
+        }
+        @-moz-keyframes bubble-moving-#{$i}#{$j} { /* Firefox */
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(#{$i}rem, #{$j}rem);
+            }
+        }
+        @-webkit-keyframes bubble-moving-#{$i}#{$j} { /* Webkit */
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(#{$i}rem, #{$j}rem);
+            }
         }
     }
 }

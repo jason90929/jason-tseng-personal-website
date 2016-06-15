@@ -36,11 +36,7 @@ gulp.task('connect', () => {
 });
 
 gulp.task('browserify', () => {
-    // return browserify('app/assets/scripts/app.js')
-    return browserify({
-        entries: [
-            'app/assets/scripts/app.js'
-        ]})
+    return browserify('app/assets/scripts/app.js')
         .bundle()
         .pipe(source('main.js'))
         .pipe(buffer()) // <----- convert from streaming to buffered vinyl file object

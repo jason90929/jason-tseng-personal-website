@@ -123,7 +123,7 @@ module.exports = function($scope, $rootScope, $location) {
         bubble(40, 300);
     }
     else {
-        bubble(20, 200);
+        bubble(20, 150);
     }
 };
 
@@ -172,15 +172,15 @@ function bubble(amount, maxSize) {
     // const amount = 40; // Num of elements to generate
 
     function begin() {
-        for(let i = 0; i < amount; i++) {
+        for (let i = 0; i < amount; i++) {
             $(fragment).append(createElement());
         }
         container.appendChild(fragment); // append all dynamically created elements at once
-        generateAnimation(); // then build their animation
+        // generateAnimation(); // then build their animation
     }
 
     function createElement() {
-        const diameter = Math.floor(Math.random() * maxSize + minSize) -1;
+        const diameter = Math.floor(Math.random() * maxSize + minSize) - 1;
         const size = 150; // 大小固定
         const size_imp = Math.floor(Math.random() * 8) + 1;
         const rotate_way = Math.floor(Math.random() * 2); // 順時針與逆時針
@@ -212,29 +212,30 @@ function bubble(amount, maxSize) {
         '</svg>');
     }
 
-    function generateAnimation() {
-        let collection = document.querySelectorAll('#bubble > svg');
-        collection = Array.prototype.slice.call(collection);
-
-        collection.forEach(function(element) {
-            element.animate([
-                { transform: 'translate(0,0)' },
-                { transform: 'translate('+getDistance()+'rem,'+getDistance()+'rem)' }
-            ], {
-                duration: (Math.random() + 1) * 10000,
-                direction: 'alternate',
-                easing: 'ease-in-out',
-                fill: 'both',
-                iterations: Infinity
-            });
-        });
-    }
-
-    // Generates a random +/- number
-    function getDistance() {
-        let num = Math.floor(Math.random()*distance) + 1;
-        return num *= Math.floor(Math.random()*2) === 1 ? 1 : -1;
-    }
+    // function generateAnimation() {
+    //     let collection = document.querySelectorAll('#bubble > svg');
+    //     collection = Array.prototype.slice.call(collection);
+    //
+    //     collection.forEach(function (element) {
+    //         // Only worked for Chrome
+    //         // try {
+    //         //     element.animate([
+    //         //         {transform: 'translate(0,0)'},
+    //         //         {transform: 'translate(' + getDistance() + 'rem,' + getDistance() + 'rem)'}
+    //         //     ], {
+    //         //         duration: (Math.random() + 1) * 10000
+    //         //     });
+    //         // } catch(e) {
+    //         //     console.log(e);
+    //         // }
+    //     });
+    // }
+    //
+    // // Generates a random +/- number
+    // function getDistance() {
+    //     let num = Math.floor(Math.random() * distance) + 1;
+    //     return num *= Math.floor(Math.random() * 2) === 1 ? 1 : -1;
+    // }
 
     begin();
 }

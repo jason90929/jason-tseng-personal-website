@@ -114,37 +114,37 @@
             @include box-shadow-after();
         }
 
-        &.red {
-            @include custom-color($red);
-        }
-
-        &.orange {
-            @include custom-color($orange);
-        }
-
-        &.yellow {
-            @include custom-color($yellow);
-        }
-
-        &.green {
-            @include custom-color($green);
-        }
-
-        &.blue {
-            @include custom-color($blue);
-        }
-
-        &.indigo {
-            @include custom-color($indigo);
-        }
-
-        &.purple {
-            @include custom-color($purple);
-        }
-
-        &.gray {
-            @include custom-color($gray);
-        }
+        //&.red {
+        //    @include custom-color($red);
+        //}
+        //
+        //&.orange {
+        //    @include custom-color($orange);
+        //}
+        //
+        //&.yellow {
+        //    @include custom-color($yellow);
+        //}
+        //
+        //&.green {
+        //    @include custom-color($green);
+        //}
+        //
+        //&.blue {
+        //    @include custom-color($blue);
+        //}
+        //
+        //&.indigo {
+        //    @include custom-color($indigo);
+        //}
+        //
+        //&.purple {
+        //    @include custom-color($purple);
+        //}
+        //
+        //&.gray {
+        //    @include custom-color($gray);
+        //}
     }
 }
 
