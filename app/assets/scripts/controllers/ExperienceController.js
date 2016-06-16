@@ -3,17 +3,40 @@ module.exports = function($scope, $rootScope) {
     
     $scope.experience = [
         {
+            name: 'Delta 台達電子',
+            intro: '無 RWD 之教師備課系統，獨立完成靜態頁面，具客製化播放器、按鈕特效、拖拉上傳、班級即時排序演算法等功能；完成頁面後需拆成 PHP 並以 include 方式組合頁面。',
+            duration: '2016.05 ~ Present',
+            detail: [
+                {
+                    title: 'Front-End',
+                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'SCSS / SASS']
+                },
+                {
+                    title: 'Tools',
+                    tags: ['IntelliJ IDEA', 'PHP']
+                },
+                {
+                    title: 'System',
+                    tags: ['Gulp', 'Bower', 'NodeJS', 'MAMP']
+                }
+            ]
+        },
+        {
             name: 'My Wedding 我的婚禮網站',
             intro: '與其他 2 位前端工程師協同完成純靜態頁面。此專案除首頁外並無 RWD',
             duration: '2016.05',
             detail: [
                 {
                     title: 'Front-End',
-                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'SCSS / SASS', 'Gulp', 'Bower', 'Npm']
+                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'SCSS / SASS']
                 },
                 {
                     title: 'Tools',
                     tags: ['IntelliJ IDEA']
+                },
+                {
+                    title: 'System',
+                    tags: ['Gulp', 'Bower', 'NodeJS']
                 }
             ]
         },
@@ -33,6 +56,10 @@ module.exports = function($scope, $rootScope) {
                 {
                     title: 'Tools',
                     tags: ['IntelliJ IDEA']
+                },
+                {
+                    title: 'System',
+                    tags: ['Maven']
                 }
             ]
         },
@@ -47,11 +74,15 @@ module.exports = function($scope, $rootScope) {
                 },
                 {
                     title: 'Back-End',
-                    tags: ['Java', 'Struts2', 'Hibernate', 'MySQL']
+                    tags: ['Java', 'Struts2', 'Hibernate']
                 },
                 {
                     title: 'Tools',
                     tags: ['Eclipse', 'iReport', 'DBVisualizer']
+                },
+                {
+                    title: 'System',
+                    tags: ['Maven', 'Tomcat', 'MySQL']
                 }
             ]
         },
@@ -66,11 +97,15 @@ module.exports = function($scope, $rootScope) {
                 },
                 {
                     title: 'Back-End',
-                    tags: ['Groovy', 'Grails', 'H2DB']
+                    tags: ['Groovy', 'Grails']
                 },
                 {
                     title: 'Tools',
-                    tags: ['IntelliJ IDEA', 'H2']
+                    tags: ['IntelliJ IDEA']
+                },
+                {
+                    title: 'System',
+                    tags: ['Linux', 'Tomcat', 'H2']
                 }
             ]
         },
@@ -85,11 +120,15 @@ module.exports = function($scope, $rootScope) {
                 },
                 {
                     title: 'Back-End',
-                    tags: ['Groovy', 'Grails', 'MongoDB']
+                    tags: ['Groovy', 'Grails']
                 },
                 {
                     title: 'Tools',
-                    tags: ['IntelliJ IDEA', 'MongoDB']
+                    tags: ['IntelliJ IDEA']
+                },
+                {
+                    title: 'System',
+                    tags: ['Linux', 'Tomcat', 'MongoDB']
                 }
             ]
         },
@@ -108,7 +147,11 @@ module.exports = function($scope, $rootScope) {
                 },
                 {
                     title: 'Tools',
-                    tags: ['IntelliJ IDEA', 'iReport', 'H2']
+                    tags: ['IntelliJ IDEA', 'iReport']
+                },
+                {
+                    title: 'System',
+                    tags: ['Linux', 'Tomcat', 'H2']
                 }
             ]
         },
@@ -127,7 +170,11 @@ module.exports = function($scope, $rootScope) {
                 },
                 {
                     title: 'Tools',
-                    tags: ['IntelliJ IDEA', 'H2']
+                    tags: ['IntelliJ IDEA']
+                },
+                {
+                    title: 'System',
+                    tags: ['Linux', 'Tomcat', 'H2']
                 }
             ]
         },
@@ -146,7 +193,11 @@ module.exports = function($scope, $rootScope) {
                 },
                 {
                     title: 'Tools',
-                    tags: ['IntelliJ IDEA', 'H2']
+                    tags: ['IntelliJ IDEA']
+                },
+                {
+                    title: 'System',
+                    tags: ['Linux', 'Tomcat', 'H2']
                 }
             ]
         },
@@ -161,11 +212,15 @@ module.exports = function($scope, $rootScope) {
                 },
                 {
                     title: 'Back-End',
-                    tags: ['NodeJS', 'Cordova']
+                    tags: ['NodeJS']
                 },
                 {
                     title: 'Tools',
                     tags: ['IntelliJ IDEA', 'Parse', 'Cloudinary', 'MailGun']
+                },
+                {
+                    title: 'System',
+                    tags: ['PhoneGap', 'Cordova']
                 }
             ]
         }

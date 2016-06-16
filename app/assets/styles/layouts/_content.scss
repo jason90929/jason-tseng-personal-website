@@ -120,11 +120,21 @@
         }
     }
 
-    .experience-wrapper {
-        overflow: hidden;
+    .avatar {
+        position: relative;
+        display: block;
+        float: none;
+        min-height: 400px;
+        max-width: 100%;
+        margin: 0 0 40px;
+        background: transparent url('../assets/images/avatar.jpg') center center / cover;
+
+        -moz-box-shadow: 1px 2px 3px 3px rgba(60, 60, 60, 0.4);
+        -webkit-box-shadow: 1px 2px 3px 3px rgba(60, 60, 60, 0.4);
+        box-shadow: 1px 2px 3px 3px rgba(60, 60, 60, 0.4);
     }
 
-    .info {
+    .info-wrapper {
         position: relative;
         display: inline-block;
         margin: 0 4px;
@@ -134,10 +144,10 @@
             width: 18px;
             height: 18px;
             line-height: 18px;
+            font-size: 14px;
             text-align: center;
             color: #fff;
             background-color: $blue;
-            cursor: pointer;
 
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
@@ -149,7 +159,9 @@
             -o-transition: background-color .3s ease-out;
             transition: background-color .3s ease-out;
 
-            &:hover {
+            &:hover,
+            &:focus,
+            &:active {
                 background-color: lighten($blue, 10%);
 
                 -webkit-transition: background-color .3s ease-out;
@@ -158,7 +170,7 @@
                 -o-transition: background-color .3s ease-out;
                 transition: background-color .3s ease-out;
 
-                & + .chromatogram-wrapper {
+                & + .info {
                     visibility: visible;
                     opacity: 1;
 
@@ -177,7 +189,9 @@
             }
         }
 
-        .chromatogram-wrapper {
+        .info {
+            $info-bg: rgb(236, 245, 223);
+
             position: absolute;
             display: inline-block;
             padding: 12px;
@@ -186,7 +200,7 @@
             top: -26px;
             left: 40px;
             color: $gray;
-            background-color: #f1fbe5;
+            background-color: $info-bg;
             visibility: hidden;
             opacity: 0;
 
@@ -214,20 +228,20 @@
                 top: 26px;
                 border-width: 10px;
                 border-style: solid dashed dashed;
-                border-color: transparent #f1fbe5 transparent transparent;
+                border-color: transparent $info-bg transparent transparent;
             }
 
             .text {
                 color: inherit;
             }
 
-            .chromatogram-left {
+            .info-left {
                 float: left;
                 display: block;
                 color: inherit;
             }
 
-            .chromatogram-right {
+            .info-right {
                 float: right;
                 display: block;
                 color: inherit;
@@ -287,6 +301,13 @@
         .indent {
             padding: 0 1.5em;
         }
+    }
+
+    .avatar {
+        float: right;
+        margin: 0 30px 0 40px;
+        height: 400px;
+        width: 300px;
     }
 
     .intro-wrapper {

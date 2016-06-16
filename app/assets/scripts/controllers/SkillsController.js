@@ -43,7 +43,7 @@ module.exports = function($scope, $rootScope) {
                     content: '個人配備，MacBook Pro Retina, 13", Early 2015'
                 },
                 {
-                    title: 'IntelliJ IDEA',
+                    title: 'IntelliJ IDEA 2016.1',
                     content: '個人專屬的開發工具，功能具包含後台且強大，包含使用內建的 SVN、Git，都能完整使用'
                 },
                 {
@@ -61,15 +61,15 @@ module.exports = function($scope, $rootScope) {
             sub: [
                 {
                     title: 'Evernote',
-                    content: '個人記事本，記錄自己一些系統的環境架設步驟，或功能操作步驟'
+                    content: '個人記事本，記錄一些系統的環境架設步驟，或功能操作步驟'
                 },
                 {
                     title: 'Trello',
-                    content: '專案與時辰控管'
+                    content: '個人的專案與時辰控管'
                 },
                 {
                     title: 'Slack',
-                    content: '專案控管'
+                    content: '與公司的專案控管'
                 },
                 {
                     title: 'SVN',
