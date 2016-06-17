@@ -7,7 +7,7 @@ import sass from 'gulp-ruby-sass';
 import browserify from 'browserify';
 import browserSync from 'browser-sync';
 import source from 'vinyl-source-stream';
-import minifyCSS  from 'gulp-minify-css';
+import minifyCSS  from 'gulp-clean-css';
 import bundle from 'gulp-bundle-assets';
 import rimraf from 'gulp-rimraf';
 import uglify from 'gulp-uglify';

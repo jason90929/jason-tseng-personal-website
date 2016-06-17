@@ -52,7 +52,7 @@ module.exports = function($scope, $rootScope) {
                 },
                 {
                     title: 'Photoshop',
-                    content: '主要僅用於接收設計師網頁稿，並實作 HTML5 網頁；如專案有需求，會做 RWD'
+                    content: '主要僅用於查看設計師網頁稿，並實作 HTML5 網頁；如專案有需求，會做 RWD'
                 }
             ]
         },
@@ -95,6 +95,10 @@ module.exports = function($scope, $rootScope) {
                 {
                     title: 'MAMP',
                     content: 'MAMP 就是 PC 的 Xampp，開啟 Apache 和 Nginx 之用途。主要用在某些 PHP 專案需要。'
+                },
+                {
+                    title: 'Tomcat',
+                    content: '以 Grails 和 Java 所匯出的 .war 檔，使用架在 Linux 內的 Tomcat 去啟動。'
                 }
             ]
         }

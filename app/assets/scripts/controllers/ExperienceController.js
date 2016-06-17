@@ -4,7 +4,7 @@ module.exports = function($scope, $rootScope) {
     $scope.experience = [
         {
             name: 'Delta 台達電子',
-            intro: '無 RWD 之教師備課系統，獨立完成靜態頁面，具客製化播放器、按鈕特效、拖拉上傳、班級即時排序演算法等功能；完成頁面後需拆成 PHP 並以 include 方式組合頁面。',
+            intro: '無 RWD 之教師備課系統，獨立完成靜態頁面，具客製化播放器、按鈕特效、拖拉上傳、班級即時排序演算法等功能；完成後需拆成 PHP 並以 include 方式組合頁面交給客戶。',
             duration: '2016.05 ~ Present',
             detail: [
                 {
@@ -42,7 +42,7 @@ module.exports = function($scope, $rootScope) {
         },
         {
             name: '遠傳 WebIWS 文字語音服務系統',
-            intro: '主要內容以前端為主，針對功能客製化，串接 API 為主要項目',
+            intro: '工作分配以前端為主，針對功能客製化，串接 API 為主要項目',
             duration: '2016.03 ~ 2016.04',
             detail: [
                 {
@@ -59,7 +59,7 @@ module.exports = function($scope, $rootScope) {
                 },
                 {
                     title: 'System',
-                    tags: ['Maven']
+                    tags: ['Maven', 'Tomcat']
                 }
             ]
         },
