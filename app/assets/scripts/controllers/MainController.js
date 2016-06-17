@@ -1,8 +1,4 @@
 module.exports = function($scope, $rootScope, $location) {
-    $rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
-        $rootScope.animation = 'fade-out';
-    });
-    
     $scope.menu_list = [
         {
             id: 'about',
@@ -95,8 +91,8 @@ module.exports = function($scope, $rootScope, $location) {
         /* Every time the window is scrolled ... */
         $(window).scroll(function() {
             $('.fade-in').each(function (i) {
-                var top_of_object = $(this).offset().top;
-                var bottom_of_window = $(window).scrollTop() + $(window).height();
+                const top_of_object = $(this).offset().top;
+                const bottom_of_window = $(window).scrollTop() + $(window).height();
 
                 /* If the object is completely visible in the window, fade it it */
                 if (bottom_of_window > top_of_object) {

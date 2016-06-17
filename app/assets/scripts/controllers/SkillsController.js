@@ -11,14 +11,14 @@ module.exports = function($scope, $rootScope) {
                 },
                 {
                     title: 'SEO',
-                    content: '熟悉，且知道如何優化效能'
+                    content: '熟悉'
                 },
                 {
                     title: 'RWD',
-                    content: '還滿熟悉，個人偏好由小裝置為 base 開發到大裝置'
+                    content: '熟悉，個人偏好由小裝置為 base 開發到大裝置'
                 },
                 {
-                    title: 'SASS/SCSS',
+                    title: 'SASS / SCSS',
                     content: 'CSS3 開發必學，架構完善又清楚又速度快'
                 },
                 {

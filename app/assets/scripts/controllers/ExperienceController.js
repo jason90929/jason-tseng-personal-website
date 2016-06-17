@@ -9,15 +9,19 @@ module.exports = function($scope, $rootScope) {
             detail: [
                 {
                     title: 'Front-End',
-                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'SCSS / SASS']
+                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'SASS / SCSS']
+                },
+                {
+                    title: 'Back-End',
+                    tags: ['PHP']
                 },
                 {
                     title: 'Tools',
-                    tags: ['IntelliJ IDEA', 'PHP']
+                    tags: ['IntelliJ IDEA', 'MAMP']
                 },
                 {
                     title: 'System',
-                    tags: ['Gulp', 'Bower', 'NodeJS', 'MAMP']
+                    tags: ['Gulp', 'Bower', 'npm', 'Nginx']
                 }
             ]
         },
@@ -28,7 +32,7 @@ module.exports = function($scope, $rootScope) {
             detail: [
                 {
                     title: 'Front-End',
-                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'SCSS / SASS']
+                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'SASS / SCSS']
                 },
                 {
                     title: 'Tools',
@@ -36,7 +40,7 @@ module.exports = function($scope, $rootScope) {
                 },
                 {
                     title: 'System',
-                    tags: ['Gulp', 'Bower', 'NodeJS']
+                    tags: ['Gulp', 'Bower', 'npm']
                 }
             ]
         },
