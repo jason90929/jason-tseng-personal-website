@@ -66,42 +66,44 @@
         background: -moz-linear-gradient(30deg, $orange-bg-color, lighten($orange-bg-color, 20%)); /* For Firefox 3.6 to 15 */
         background: linear-gradient(30deg, $orange-bg-color, lighten($orange-bg-color, 20%)); /* Standard syntax */
 
-        .show-more {
-            cursor: pointer;
-            margin: 5px 10px;
-            display: inline-block;
-            overflow: hidden;
-            line-height: 38px;
-            text-align: left;
-            font-size: 28px;
-            color: $white;
-        }
+        hgroup {
+            .show-more {
+                cursor: pointer;
+                margin: 5px 10px;
+                display: inline-block;
+                overflow: hidden;
+                line-height: 38px;
+                text-align: left;
+                font-size: 28px;
+                color: $white;
+            }
 
-        .name {
-            display: inline-block;
-            text-align: left;
-            color: $white;
-            font-size: 40px;
-            line-height: 38px;
-            margin: 5px 0 5px 10px;
-            overflow: hidden;
-        }
+            .name {
+                display: inline-block;
+                text-align: left;
+                color: $white;
+                font-size: 40px;
+                line-height: 38px;
+                margin: 5px 0 5px 10px;
+                overflow: hidden;
+            }
 
-        .title {
-            display: inline-block;
-            float: right;
-            text-align: right;
-            color: #eee;
-            font-size: 28px;
-            line-height: 38px;
-            margin: 5px 10px 5px 0;
-            overflow: hidden;
-        }
+            .title {
+                display: inline-block;
+                float: right;
+                text-align: right;
+                color: #eee;
+                font-size: 28px;
+                line-height: 38px;
+                margin: 5px 10px 5px 0;
+                overflow: hidden;
+            }
 
-        &::after {
-            content: "";
-            display: block;
-            clear: both;
+            &::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
         }
     }
 
@@ -260,28 +262,29 @@
         width: 270px;
         height: 134px;
         top: 20px;
-        left: auto;
         bottom: auto;
         margin-left: -5px;
         border: 1px solid $orange-bg-color;
         vertical-align: middle;
         text-align: center;
 
-        .show-more {
-            display: none;
-        }
+        hgroup {
+            .show-more {
+                display: none;
+            }
 
-        .name {
-            margin: 12px 0 0 0;
-            line-height: 64px;
-            text-align: center;
-            font-size: 46px;
-        }
+            .name {
+                margin: 12px 0 0 0;
+                line-height: 64px;
+                text-align: center;
+                font-size: 46px;
+            }
 
-        .title {
-            float: none;
-            margin: 0 0 12px 0;
-            text-align: center;
+            .title {
+                float: none;
+                margin: 0 0 12px 0;
+                text-align: center;
+            }
         }
     }
 

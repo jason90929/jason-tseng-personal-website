@@ -51,7 +51,7 @@ module.exports = function($scope, $rootScope) {
             detail: [
                 {
                     title: 'Front-End',
-                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'RequireJS', 'AngularJs']
+                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'RequireJS', 'AngularJS']
                 },
                 {
                     title: 'Back-End',
@@ -228,8 +228,6 @@ module.exports = function($scope, $rootScope) {
                 }
             ]
         }
-
-
     ];
 
     $scope.max = 2; // 顯示預設量
