@@ -1,19 +1,19 @@
 {
-  "name": "angular-gulp-bower-framework-example",
-  "version": "1.0.0",
-  "description": "AngularJS with Gulp, Bower, jQuery, Bootstrap",
+  "name": "Jason Tseng - Front-End Developer",
+  "version": "1.1.0",
+  "description": "Jason Tseng's personal website with resume and CV",
   "main": "main.js",
   "scripts": {
     "test": "start"
   },
   "repository": {
     "type": "git",
-    "url": "angular-gulp-bower-framework-example"
+    "url": "jason-tseng-personal-website"
   },
   "keywords": [
     "AngularJS",
     "Gulp",
-    "Node",
+    "Npm",
     "Bower",
     "jQuery",
     "BootStrap"
