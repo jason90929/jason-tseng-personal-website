@@ -44,8 +44,8 @@
 <aside class="main-menu">
     <nav>
         <ul id="main_menu">
-            <li ng-click="toggleClass(item.order); moveSmoothly(item.id); hideNavigationMenu();" ng-repeat="item in menu_list | orderBy: 'order'">
-                <a href="javascript:;" ng-bind="item.name"></a>
+            <li du-scrollspy="{{item.id}}" offset="60" ng-repeat="item in menu_list | orderBy: 'order'">
+                <a href="#{{item.id}}" du-smooth-scroll duration="1200" ng-bind="item.name" ng-click="hideNavigationMenu();"></a>
             </li>
             <li class="background"></li>
         </ul>

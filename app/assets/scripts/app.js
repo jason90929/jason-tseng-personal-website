@@ -10,7 +10,7 @@ let AppPartDirective = require('./directive/AppPart');
 
 let TelFilter = require('./filter/Tel');
 
-let app = angular.module('myApp', []);
+let app = angular.module('myApp', ['duScroll']);
 
 app.controller('MainController', ['$scope', '$rootScope', '$location', MainController])
     .controller('ExperienceController', ['$scope', '$rootScope', ExperienceController])

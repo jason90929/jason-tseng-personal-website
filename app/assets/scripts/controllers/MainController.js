@@ -36,22 +36,7 @@ module.exports = function($scope, $rootScope, $location) {
             order: 7
         }
     ];
-
-    $scope.toggleClass = function(i) {
-        var $li = $('ul#main_menu > li');
-        $li.removeClass('active');
-        $li.eq(i - 1).addClass('active');
-
-        $scope.active = 'active';
-    };
-
-    $scope.moveSmoothly = function(target) {
-        // scroll animation
-        $('html, body').animate({
-            scrollTop: $('#' + target).offset().top - 60
-        }, 800);
-    };
-
+    
     $scope.onShowingNavigation = false;
 
     $scope.showNavigationMenu = function() {

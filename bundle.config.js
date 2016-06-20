@@ -10,6 +10,10 @@ module.exports = {
                 {
                     src: './bower_components/angular/angular.js',
                     minSrc: './bower_components/angular/angular.min.js'
+                },
+                {
+                    src: './bower_components/angular-scroll/angular-scroll.js',
+                    minSrc: './bower_components/angular-scroll/angular-scroll.min.js'
                 }
             ],
             styles: [
