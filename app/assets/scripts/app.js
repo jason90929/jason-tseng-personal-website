@@ -12,7 +12,7 @@ let TelFilter = require('./filter/Tel');
 
 let app = angular.module('myApp', ['duScroll']);
 
-app.controller('MainController', ['$scope', '$rootScope', '$location', MainController])
+app.controller('MainController', ['$scope', MainController])
     .controller('ExperienceController', ['$scope', '$rootScope', ExperienceController])
     .controller('SkillsController', ['$scope', '$rootScope', SkillsController])
     .controller('EducationController', ['$scope', '$rootScope', EducationController])

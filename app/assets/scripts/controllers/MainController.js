@@ -1,4 +1,4 @@
-module.exports = function($scope, $rootScope, $location) {
+module.exports = function($scope) {
     $scope.menu_list = [
         {
             id: 'about',
@@ -60,22 +60,9 @@ module.exports = function($scope, $rootScope, $location) {
     };
 
     $(document).ready(function() {
-        // refresh 後要知道自己在哪個路徑
-        // if ($location.$$path !== '/') {
-        //     for (var i = 0; i < $scope.menu_list.length; i++) {
-        //         if ($location.$$path === '/' + $scope.menu_list[i].id) {
-        //             $scope.toggleClass(i + 1);
-        //             break;
-        //         }
-        //     }
-        // }
-        // else {
-        //     $scope.active = '';
-        // }
-
         /* Every time the window is scrolled ... */
         $(window).scroll(function() {
-            $('.fade-in').each(function (i) {
+            $('.fade-in').each(function () {
                 const top_of_object = $(this).offset().top;
                 const bottom_of_window = $(window).scrollTop() + $(window).height();
 
@@ -149,7 +136,7 @@ function bubble(amount, maxSize) {
     const fragment = document.createDocumentFragment(); // https://developer.mozilla.org/en-US/docs/Web/API/Document/createDocumentFragment
     const minSize = 20;
     // const maxSize = 300;
-    const distance = 12; // How far elements can travel. Using REM in this pen.
+    // const distance = 12; // How far elements can travel. Using REM in this pen.
     // const amount = 40; // Num of elements to generate
 
     function begin() {
