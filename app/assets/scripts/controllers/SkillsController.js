@@ -7,7 +7,7 @@ module.exports = function($scope, $rootScope) {
             sub: [
                 {
                     title: 'HTML5',
-                    content: '熟悉'
+                    content: '熟悉，且了解部分標籤對於 SEO 的影響'
                 },
                 {
                     title: 'SEO',
@@ -15,15 +15,15 @@ module.exports = function($scope, $rootScope) {
                 },
                 {
                     title: 'RWD',
-                    content: '熟悉，個人偏好由小裝置為 base 開發到大裝置'
+                    content: '熟悉，個人偏好由小裝置開發到大裝置'
                 },
                 {
                     title: 'SASS / SCSS',
-                    content: 'CSS3 開發必學，架構完善又清楚又速度快'
+                    content: 'CSS3 開發必學，架構完善又清楚，且開發速度快'
                 },
                 {
                     title: 'BootStrap',
-                    content: '主要使用他的 Modal、Pane 居多，也經常使用 Font Awesome'
+                    content: '主要使用他的 Modal、Pane、Slider 居多，也經常使用 Font Awesome；網頁架構仍以自己刻居多'
                 },
                 {
                     title: 'jQuery',
@@ -31,7 +31,7 @@ module.exports = function($scope, $rootScope) {
                 },
                 {
                     title: 'AngularJS 1.x',
-                    content: '架構還算熟悉，使用 filter、directive、router 等具代表性的 Angular 招牌'
+                    content: '善用其架構，常使用 filter、directive、router 等擴充 JavaScript 和 jQuery 不足的部分'
                 }
             ]
         },
@@ -39,20 +39,20 @@ module.exports = function($scope, $rootScope) {
             title: 'Development Tools',
             sub: [
                 {
-                    title: 'MAC OS X',
-                    content: '個人配備，MacBook Pro Retina, 13", Early 2015'
-                },
-                {
                     title: 'IntelliJ IDEA 2016.1',
                     content: '個人專屬的開發工具，功能具包含後台且強大，包含使用內建的 SVN、Git，都能完整使用'
                 },
                 {
-                    title: 'Sketch',
-                    content: '熟悉介面操作，主要用於排版居多'
+                    title: 'Npm',
+                    content: '管理所有前端套件以及安裝，開發人員必學項目'
                 },
                 {
-                    title: 'Photoshop',
-                    content: '主要僅用於查看設計師網頁稿，並實作 HTML5 網頁；如專案有需求，會做 RWD'
+                    title: 'Gulp',
+                    content: '前端好用的自動化神器，個人要用在 SCSS 合併、即時偵測 .js、.css 的變動、彙整成一包靜態 HTML 網頁'
+                },
+                {
+                    title: 'Bower',
+                    content: '個人用於所有前端套件組合成一隻 .js 後匯入網頁中'
                 }
             ]
         },
@@ -84,6 +84,10 @@ module.exports = function($scope, $rootScope) {
         {
             title: 'System',
             sub: [
+                {
+                    title: 'MAC OS X',
+                    content: '個人開發設備，MacBook Pro Retina, 13", Early 2015'
+                },
                 {
                     title: 'Linux',
                     content: '會使用指令，安裝及架站能力'

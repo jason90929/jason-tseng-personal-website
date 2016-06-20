@@ -77,6 +77,7 @@ gulp.task('html', () => {
         .pipe(reload({stream: true}));
 });
 
+// 將 bower 安裝的所有套件組成一包 bundle.js
 gulp.task('bundle', () => {
     return gulp.src('./bundle.config.js')
         .pipe(bundle())

@@ -1,5 +1,5 @@
 {
-  "name": "Jason Tseng - Front-End Developer",
+  "name": "jason-tseng-personal-website",
   "version": "1.1.0",
   "description": "Jason Tseng's personal website with resume and CV",
   "main": "main.js",
@@ -38,7 +38,6 @@
     "gulp-ruby-sass": "^2.0.6",
     "gulp-sync": "^0.1.4",
     "gulp-uglify": "^1.5.3",
-    "jquery": "^2.2.4",
     "main-bower-files": "^2.13.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
