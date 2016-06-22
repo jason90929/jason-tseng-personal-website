@@ -1,6 +1,6 @@
 import gulp from 'gulp';
-var gulpsync = require('gulp-sync')(gulp);
-// import gulpsync from 'gulp-sync';
+// var gulpsync = require('gulp-sync')(gulp);
+import gulpsync from 'gulp-sync';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import mainBowerFiles from 'main-bower-files';
 import sass from 'gulp-ruby-sass';
@@ -13,7 +13,7 @@ import rimraf from 'gulp-rimraf';
 import uglify from 'gulp-uglify';
 import buffer from 'vinyl-buffer';
 import htmlmin from 'gulp-htmlmin';
-var bom = require('gulp-bom');
+import bom from 'gulp-bom';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
