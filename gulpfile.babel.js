@@ -13,6 +13,7 @@ import rimraf from 'gulp-rimraf';
 import uglify from 'gulp-uglify';
 import buffer from 'vinyl-buffer';
 import htmlmin from 'gulp-htmlmin';
+var bom = require('gulp-bom');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -39,9 +40,10 @@ gulp.task('browserify', () => {
     return browserify('app/assets/scripts/app.js')
         .bundle()
         .pipe(source('main.js'))
-        .pipe(buffer()) // <----- convert from streaming to buffered vinyl file object
+        .pipe(buffer()) // js 壓縮前置準備
         .pipe($.babel()) // ES6
-        .pipe(uglify()) // now gulp-uglify works
+        .pipe(uglify()) // 壓縮 js
+        .pipe(bom()) // 解決中文亂碼
         .pipe(gulp.dest('./public/assets'))
         .pipe(reload({stream: true}));
 });

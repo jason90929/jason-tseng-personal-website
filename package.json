@@ -28,6 +28,7 @@
     "browserify": "^13.0.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
+    "gulp-bom": "^1.0.0",
     "gulp-bundle-assets": "^2.27.1",
     "gulp-clean-css": "^2.0.10",
     "gulp-connect": "^4.0.0",
