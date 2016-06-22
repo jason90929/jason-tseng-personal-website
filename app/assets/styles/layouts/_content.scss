@@ -1,33 +1,6 @@
 @media screen {
-    //.fade-in {
-    //    opacity: 0.5;
-    //
-    //    -webkit-transform: scale(.9);
-    //    -moz-transform: scale(.9);
-    //    -ms-transform: scale(.9);
-    //    -o-transform: scale(.9);
-    //    transform: scale(.9);
-    //
-    //    &.active {
-    //        opacity: 1;
-    //
-    //        -webkit-transform: none;
-    //        -moz-transform: none;
-    //        -ms-transform: none;
-    //        -o-transform: none;
-    //        transform: none;
-    //
-    //        -webkit-transition: all .3s ease-out;
-    //        -moz-transition: all .3s ease-out;
-    //        -ms-transition: all .3s ease-out;
-    //        -o-transition: all .3s ease-out;
-    //        transition: all .3s ease-out;
-    //    }
-    //}
-
     .content-wrapper {
         z-index: 0;
-        //position: absolute;
         position: relative;
         padding-top: 80px;
 
@@ -69,30 +42,6 @@
         position: relative;
         padding: 20px 20px 15% 20px;
         overflow-y: hidden;
-
-        //&:nth-of-type(odd) {
-        //    background: $black-bg-opacity-dark-color; /* For browsers that do not support gradients */
-        //    background: -webkit-linear-gradient(to right, $black-bg-opacity-color, lighten($black-bg-opacity-color, 15%), $black-bg-opacity-color); /* For Safari 5.1 to 6.0 */
-        //    background: -o-linear-gradient(to right, $black-bg-opacity-color, lighten($black-bg-opacity-color, 15%), $black-bg-opacity-color); /* For Opera 11.1 to 12.0 */
-        //    background: -moz-linear-gradient(to right, $black-bg-opacity-color, lighten($black-bg-opacity-color, 15%), $black-bg-opacity-color); /* For Firefox 3.6 to 15 */
-        //    background: linear-gradient(to right, $black-bg-opacity-color, lighten($black-bg-opacity-color, 15%), $black-bg-opacity-color);
-        //
-        //    -webkit-box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
-        //    -moz-box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
-        //    box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
-        //}
-        //
-        //&:nth-of-type(even) {
-        //    background: $black-bg-opacity-dark-color; /* For browsers that do not support gradients */
-        //    background: -webkit-linear-gradient(to right, lighten($black-bg-opacity-color, 10%), lighten($black-bg-opacity-color, 25%), lighten($black-bg-opacity-color, 10%)); /* For Safari 5.1 to 6.0 */
-        //    background: -o-linear-gradient(to right, lighten($black-bg-opacity-color, 10%), lighten($black-bg-opacity-color, 25%), lighten($black-bg-opacity-color, 10%)); /* For Opera 11.1 to 12.0 */
-        //    background: -moz-linear-gradient(to right, lighten($black-bg-opacity-color, 10%), lighten($black-bg-opacity-color, 25%), lighten($black-bg-opacity-color, 10%)); /* For Firefox 3.6 to 15 */
-        //    background: linear-gradient(to right, lighten($black-bg-opacity-color, 10%), lighten($black-bg-opacity-color, 25%), lighten($black-bg-opacity-color, 10%));
-        //
-        //    -webkit-box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
-        //    -moz-box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
-        //    box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
-        //}
 
         &.invisible {
             opacity: 0;
@@ -324,13 +273,8 @@
 
 @media screen and (min-width: 992px) {
     .content-wrapper {
-        //position: relative;
         display: block;
-        //left: 300px;
-        //right: 20px;
         padding: 0;
-        //margin: 20px 0;
-        //overflow-y: auto;
 
         &.show-in-small {
             display: none;
@@ -392,12 +336,6 @@
 }
 
 @media screen and (min-width: 1400px) {
-    //.content-wrapper {
-    //    left: 370px;
-        //right: 30px;
-        //margin: 50px 0;
-    //}
-
     .content {
         max-width: 1400px;
     }

@@ -253,15 +253,6 @@
         display: none;
     }
 
-    //.main-header,
-    //.main-menu {
-    //    left: -270px;
-    //
-    //    &.active {
-    //        left: 20px;
-    //    }
-    //}
-
     .main-header {
         display: none;
         width: 270px;
@@ -370,37 +361,7 @@
 }
 
 @media screen and (min-width: 1400px) {
-    .main-header,
-    .main-menu {
-        //left: -270px;
-        //
-        //&.active {
-        //    left: 60px;
-        //}
-    }
-
     .main-header {
         top: 60px;
-    }
-
-    .main-menu {
-        //padding-top: 194px;
-
-        //ul {
-        //    li {
-        //        $elements: 15;
-        //        @for $i from 1 to $elements {
-        //            &:nth-child(#{$i}).active ~ .background {
-        //                top: calc(#{$i} * 46px + 190px);
-        //            }
-        //        }
-        //
-        //        @for $i from 1 to $elements {
-        //            &:nth-child(#{$i}):hover ~ .background {
-        //                top: calc(#{$i} * 46px + 190px);
-        //            }
-        //        }
-        //    }
-        //}
     }
 }
