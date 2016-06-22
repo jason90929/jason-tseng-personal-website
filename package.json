@@ -1,6 +1,6 @@
 {
   "name": "jason-tseng-personal-website",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Jason Tseng's personal website with resume and CV",
   "main": "main.js",
   "scripts": {

@@ -14,6 +14,10 @@ module.exports = {
                 {
                     src: './bower_components/angular-scroll/angular-scroll.js',
                     minSrc: './bower_components/angular-scroll/angular-scroll.min.js'
+                },
+                {
+                    src: './bower_components/jQuery-viewport-checker/src/jquery.viewportchecker.js',
+                    minSrc: './bower_components/jQuery-viewport-checker/dist/jquery.viewportchecker.min.js'
                 }
             ],
             styles: [

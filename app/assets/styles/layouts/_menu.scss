@@ -253,12 +253,17 @@
         display: none;
     }
 
-    .main-header,
-    .main-menu {
-        left: 20px;
-    }
+    //.main-header,
+    //.main-menu {
+    //    left: -270px;
+    //
+    //    &.active {
+    //        left: 20px;
+    //    }
+    //}
 
     .main-header {
+        display: none;
         width: 270px;
         height: 134px;
         top: 20px;
@@ -289,10 +294,15 @@
     }
 
     .main-menu {
-        width: 260px;
-        height: 100%;
-        padding-top: 154px;
-        text-align: right;
+        width: 100%;
+        top: calc(100% - 46px);
+        height: 46px;
+        padding: 0;
+        position: absolute;
+        display: block;
+        margin: 0;
+        z-index: 1;
+        text-align: center;
 
         -webkit-transform: translateX(0);
         -moz-transform: translateX(0);
@@ -300,18 +310,58 @@
         -o-transform: translateX(0);
         transform: translateX(0);
 
+        -webkit-transition: none;
+        -moz-transition: none;
+        -ms-transition: none;
+        -o-transition: none;
+        transition: none;
+
+        &.fixed {
+            position: fixed;
+            top: 0;
+
+            -webkit-transition: none;
+            -moz-transition: none;
+            -ms-transition: none;
+            -o-transition: none;
+            transition: none;
+        }
+
         ul {
+            margin: 0;
+
             li {
+                width: 150px;
+                float: left;
+
+                &.background {
+                    top: 0;
+                    left: -150px;
+                }
+
+                a {
+                    padding: 0;
+                }
+
+                &.active,
+                &:hover {
+                    a {
+                        padding-right: 0;
+                    }
+                }
+
                 $elements: 15;
                 @for $i from 1 to $elements {
                     &:nth-child(#{$i}).active ~ .background {
-                        top: calc(#{$i} * 46px + 150px);
+                        top: 0;
+                        left: calc((#{$i} - 1) * 150px);
                     }
                 }
 
                 @for $i from 1 to $elements {
                     &:nth-child(#{$i}):hover ~ .background {
-                        top: calc(#{$i} * 46px + 150px);
+                        top: 0;
+                        left: calc((#{$i} - 1) * 150px);
                     }
                 }
             }
@@ -320,30 +370,37 @@
 }
 
 @media screen and (min-width: 1400px) {
+    .main-header,
+    .main-menu {
+        //left: -270px;
+        //
+        //&.active {
+        //    left: 60px;
+        //}
+    }
+
     .main-header {
         top: 60px;
-        left: 60px;
     }
 
     .main-menu {
-        left: 60px;
-        padding-top: 194px;
+        //padding-top: 194px;
 
-        ul {
-            li {
-                $elements: 15;
-                @for $i from 1 to $elements {
-                    &:nth-child(#{$i}).active ~ .background {
-                        top: calc(#{$i} * 46px + 190px);
-                    }
-                }
-
-                @for $i from 1 to $elements {
-                    &:nth-child(#{$i}):hover ~ .background {
-                        top: calc(#{$i} * 46px + 190px);
-                    }
-                }
-            }
-        }
+        //ul {
+        //    li {
+        //        $elements: 15;
+        //        @for $i from 1 to $elements {
+        //            &:nth-child(#{$i}).active ~ .background {
+        //                top: calc(#{$i} * 46px + 190px);
+        //            }
+        //        }
+        //
+        //        @for $i from 1 to $elements {
+        //            &:nth-child(#{$i}):hover ~ .background {
+        //                top: calc(#{$i} * 46px + 190px);
+        //            }
+        //        }
+        //    }
+        //}
     }
 }

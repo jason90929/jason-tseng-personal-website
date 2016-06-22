@@ -1,34 +1,41 @@
 @media screen {
-    .fade-in {
-        opacity: 0.5;
-
-        -webkit-transform: scale(.9);
-        -moz-transform: scale(.9);
-        -ms-transform: scale(.9);
-        -o-transform: scale(.9);
-        transform: scale(.9);
-
-        &.active {
-            opacity: 1;
-
-            -webkit-transform: none;
-            -moz-transform: none;
-            -ms-transform: none;
-            -o-transform: none;
-            transform: none;
-
-            -webkit-transition: all .3s ease-out;
-            -moz-transition: all .3s ease-out;
-            -ms-transition: all .3s ease-out;
-            -o-transition: all .3s ease-out;
-            transition: all .3s ease-out;
-        }
-    }
+    //.fade-in {
+    //    opacity: 0.5;
+    //
+    //    -webkit-transform: scale(.9);
+    //    -moz-transform: scale(.9);
+    //    -ms-transform: scale(.9);
+    //    -o-transform: scale(.9);
+    //    transform: scale(.9);
+    //
+    //    &.active {
+    //        opacity: 1;
+    //
+    //        -webkit-transform: none;
+    //        -moz-transform: none;
+    //        -ms-transform: none;
+    //        -o-transform: none;
+    //        transform: none;
+    //
+    //        -webkit-transition: all .3s ease-out;
+    //        -moz-transition: all .3s ease-out;
+    //        -ms-transition: all .3s ease-out;
+    //        -o-transition: all .3s ease-out;
+    //        transition: all .3s ease-out;
+    //    }
+    //}
 
     .content-wrapper {
         z-index: 0;
-        position: absolute;
+        //position: absolute;
+        position: relative;
         padding-top: 80px;
+
+        -webkit-transition: all .3s linear;
+        -moz-transition: all .3s linear;
+        -ms-transition: all .3s linear;
+        -o-transition: all .3s linear;
+        transition: all .3s linear;
 
         background: $black-bg-opacity-dark-color; /* For browsers that do not support gradients */
         background: -webkit-linear-gradient(to right, $black-bg-opacity-color, lighten($black-bg-opacity-color, 15%), $black-bg-opacity-color); /* For Safari 5.1 to 6.0 */
@@ -39,12 +46,6 @@
         -webkit-box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
         -moz-box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
         box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
-
-        -webkit-transition: all .3s linear;
-        -moz-transition: all .3s linear;
-        -ms-transition: all .3s linear;
-        -o-transition: all .3s linear;
-        transition: all .3s linear;
 
         overflow-y: hidden;
 
@@ -63,9 +64,49 @@
     }
 
     .content {
+        z-index: 0;
+        opacity: 1;
         position: relative;
         padding: 20px 20px 15% 20px;
         overflow-y: hidden;
+
+        //&:nth-of-type(odd) {
+        //    background: $black-bg-opacity-dark-color; /* For browsers that do not support gradients */
+        //    background: -webkit-linear-gradient(to right, $black-bg-opacity-color, lighten($black-bg-opacity-color, 15%), $black-bg-opacity-color); /* For Safari 5.1 to 6.0 */
+        //    background: -o-linear-gradient(to right, $black-bg-opacity-color, lighten($black-bg-opacity-color, 15%), $black-bg-opacity-color); /* For Opera 11.1 to 12.0 */
+        //    background: -moz-linear-gradient(to right, $black-bg-opacity-color, lighten($black-bg-opacity-color, 15%), $black-bg-opacity-color); /* For Firefox 3.6 to 15 */
+        //    background: linear-gradient(to right, $black-bg-opacity-color, lighten($black-bg-opacity-color, 15%), $black-bg-opacity-color);
+        //
+        //    -webkit-box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
+        //    -moz-box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
+        //    box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
+        //}
+        //
+        //&:nth-of-type(even) {
+        //    background: $black-bg-opacity-dark-color; /* For browsers that do not support gradients */
+        //    background: -webkit-linear-gradient(to right, lighten($black-bg-opacity-color, 10%), lighten($black-bg-opacity-color, 25%), lighten($black-bg-opacity-color, 10%)); /* For Safari 5.1 to 6.0 */
+        //    background: -o-linear-gradient(to right, lighten($black-bg-opacity-color, 10%), lighten($black-bg-opacity-color, 25%), lighten($black-bg-opacity-color, 10%)); /* For Opera 11.1 to 12.0 */
+        //    background: -moz-linear-gradient(to right, lighten($black-bg-opacity-color, 10%), lighten($black-bg-opacity-color, 25%), lighten($black-bg-opacity-color, 10%)); /* For Firefox 3.6 to 15 */
+        //    background: linear-gradient(to right, lighten($black-bg-opacity-color, 10%), lighten($black-bg-opacity-color, 25%), lighten($black-bg-opacity-color, 10%));
+        //
+        //    -webkit-box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
+        //    -moz-box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
+        //    box-shadow: 0 0 5px 0 lighten($black-bg-opacity-color, 25%) inset;
+        //}
+
+        &.invisible {
+            opacity: 0;
+        }
+
+        &.visible {
+            opacity: 1;
+        }
+
+        &.bounceInUp {
+            -webkit-animation: 1s bounceInUp both;
+            -o-animation: 1s bounceInUp both;
+            animation: 1s bounceInUp both;
+        }
 
         .text-indent {
             text-indent: 2em;
@@ -275,20 +316,21 @@
     }
 
     .experience-wrapper {
-        -webkit-animation: fade-in .3s ease-out;
-        -o-animation: fade-in .3s ease-out;
-        animation: fade-in .3s ease-out;
+        -webkit-animation: 1s bounceInUp both;
+        -o-animation: 1s bounceInUp both;
+        animation: 1s bounceInUp both;
     }
 }
 
 @media screen and (min-width: 992px) {
     .content-wrapper {
+        //position: relative;
         display: block;
-        left: 300px;
-        right: 20px;
+        //left: 300px;
+        //right: 20px;
         padding: 0;
-        margin: 20px 0;
-        overflow-y: auto;
+        //margin: 20px 0;
+        //overflow-y: auto;
 
         &.show-in-small {
             display: none;
@@ -301,6 +343,7 @@
 
     .content {
         display: block;
+        margin: 0 auto;
         max-width: 992px;
 
         .indent {
@@ -349,14 +392,14 @@
 }
 
 @media screen and (min-width: 1400px) {
-    .content-wrapper {
-        left: 370px;
-        right: 30px;
-        margin: 50px 0;
-    }
+    //.content-wrapper {
+    //    left: 370px;
+        //right: 30px;
+        //margin: 50px 0;
+    //}
 
     .content {
-        max-width: inherit;
+        max-width: 1400px;
     }
 
     .intro-wrapper {
@@ -370,25 +413,38 @@
     }
 }
 
-@keyframes fade-in {
-    from {
+@keyframes bounceInUp {
+    0% {
         opacity: 0;
-        visibility: hidden;
-
-        -webkit-transform: scale(.9);
-        -moz-transform: scale(.9);
-        -ms-transform: scale(.9);
-        -o-transform: scale(.9);
-        transform: scale(.9);
+        -webkit-transform: translateY(2000px);
+        -moz-transform: translateY(2000px);
+        -ms-transform: translateY(2000px);
+        -o-transform: translateY(2000px);
+        transform: translateY(2000px);
     }
-    to {
-        opacity: 1;
-        visibility: visible;
 
-        -webkit-transform: none;
-        -moz-transform: none;
-        -ms-transform: none;
-        -o-transform: none;
-        transform: none;
+    60% {
+        opacity: 1;
+        -webkit-transform: translateY(-20px);
+        -moz-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        -o-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    80% {
+        -webkit-transform: translateY(10px);
+        -moz-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        -o-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
     }
 }

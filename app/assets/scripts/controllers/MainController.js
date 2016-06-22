@@ -39,6 +39,7 @@ module.exports = function($scope) {
     
     $scope.onShowingNavigation = false;
 
+    // 小尺寸的顯示選單
     $scope.showNavigationMenu = function() {
         $('.main-menu').addClass('active');
         $('.main-header').css('transform', 'translateX(80%)');
@@ -49,6 +50,7 @@ module.exports = function($scope) {
         $scope.onShowingNavigation = true;
     };
 
+    // 小尺寸的隱藏選單
     $scope.hideNavigationMenu = function() {
         $('.main-menu').removeClass('active');
         $('.main-header').css('transform', 'translateX(0)');
@@ -60,18 +62,26 @@ module.exports = function($scope) {
     };
 
     $(document).ready(function() {
-        /* Every time the window is scrolled ... */
-        $(window).scroll(function() {
-            $('.fade-in').each(function () {
-                const top_of_object = $(this).offset().top;
-                const bottom_of_window = $(window).scrollTop() + $(window).height();
-
-                /* If the object is completely visible in the window, fade it it */
-                if (bottom_of_window > top_of_object) {
-                    $(this).addClass('active');
-                }
-            });
+        // 視窗移進特效
+        $('.content').addClass('invisible').viewportChecker({
+            classToAdd: 'visible bounceInUp',
+            offset: 100
         });
+    });
+
+    var $main_menu = $('.main-menu');
+
+    /* Every time the window is scrolled ... */
+    $(window).scroll(function() {
+        // 選單是否跟隨視窗
+        if (window.innerWidth > 992) {
+            if ($(window).scrollTop() > window.innerHeight - 46) {
+                $main_menu.addClass('fixed');
+            }
+            else {
+                $main_menu.removeClass('fixed');
+            }
+        }
     });
 
     // 如果縮小時的 Navigation Bar 被開啟，放大後要關起來。
