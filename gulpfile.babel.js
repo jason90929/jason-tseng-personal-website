@@ -18,6 +18,7 @@ var bom = require('gulp-bom');
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
+// 監聽所有項目
 gulp.task('watch', ['browserify', 'scss', 'fonts', 'images', 'html'], () => {
     gulp.watch('app/assets/scripts/**', ['browserify']);
     gulp.watch('app/assets/styles/**', ['scss']);
@@ -26,6 +27,7 @@ gulp.task('watch', ['browserify', 'scss', 'fonts', 'images', 'html'], () => {
     gulp.watch('app/*.html', ['html']);
 });
 
+// 啟動伺服器
 gulp.task('connect', () => {
     browserSync({
         notify: false,
@@ -36,6 +38,7 @@ gulp.task('connect', () => {
     });
 });
 
+// 監聽 app.js
 gulp.task('browserify', () => {
     return browserify('app/assets/scripts/app.js')
         .bundle()
@@ -48,6 +51,7 @@ gulp.task('browserify', () => {
         .pipe(reload({stream: true}));
 });
 
+// 監聽 scss
 gulp.task('scss', () => {
     return sass('app/assets/styles/*.scss')
         .pipe(minifyCSS({
@@ -57,6 +61,7 @@ gulp.task('scss', () => {
         .pipe(reload({stream: true}));
 });
 
+// 監聽字型
 gulp.task('fonts', () => {
     return gulp.src(mainBowerFiles('app/assets/fonts/*.{eot,svg,ttf,woff,woff2}', function (err) {})
         .concat('app/assets/fonts/**/*'))
@@ -64,6 +69,7 @@ gulp.task('fonts', () => {
         .pipe(reload({stream: true}));
 });
 
+// 監聽圖片
 gulp.task('images', () => {
     return gulp.src(mainBowerFiles('app/assets/images/*.{jpg,jpeg,png,svg}', function (err) {})
         .concat('app/assets/images/**/*'))
@@ -71,6 +77,7 @@ gulp.task('images', () => {
         .pipe(reload({stream: true}));
 });
 
+// 監聽網頁
 gulp.task('html', () => {
     return gulp.src(mainBowerFiles('app/*.html', function (err) {})
         .concat('app/*'))
@@ -87,18 +94,22 @@ gulp.task('bundle', () => {
         .pipe(reload({stream: true}));
 });
 
+// 清除所有輸出靜態頁面內容
 gulp.task('clean', () => {
     return gulp.src('./public', { read: false })
         .pipe(rimraf());
 });
 
+// 打包所有頁面
 gulp.task('build', gulpsync.sync([
     'clean', 'bundle',
     ['browserify', 'scss', 'fonts', 'images', 'html']
 ]));
 
+// 啟動打包、伺服器後監聽
 gulp.task('serve', gulpsync.sync([
     'build', 'connect', 'watch'
 ]));
 
+// 預設指令：build
 gulp.task('default', ['build']);
