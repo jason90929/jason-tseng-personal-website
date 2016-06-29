@@ -95,8 +95,6 @@ module.exports = function($scope) {
         setTimeout (function () {
             scrollTo(0,0);
         }, 100); //100ms for example
-
-        disableScroll();
     };
 
     if (window.innerWidth > 992) {
