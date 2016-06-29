@@ -133,7 +133,7 @@
     }
 }
 
-@include scrollbars(.5em, rgba(255, 255, 255, .4));
+@include scrollbars(0, transparent);
 
 .float-left {
     float: left;

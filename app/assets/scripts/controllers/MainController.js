@@ -95,6 +95,8 @@ module.exports = function($scope) {
         setTimeout (function () {
             scrollTo(0,0);
         }, 100); //100ms for example
+
+        disableScroll();
     };
 
     if (window.innerWidth > 992) {
@@ -103,6 +105,11 @@ module.exports = function($scope) {
     else {
         bubble(20, 150);
     }
+
+    $('.skin').scroll(function(){
+        var x = $(this).scrollTop();
+        $(this).css('background-position','0% '+parseInt(-x/10)+'px');
+    });
 };
 
 // left: 37, up: 38, right: 39, down: 40,
