@@ -31,7 +31,7 @@ gulp.task('watch', ['browserify', 'scss', 'fonts', 'images', 'html'], () => {
 gulp.task('connect', () => {
     browserSync({
         notify: false,
-        port: 8099,
+        port: 9001,
         server: {
             'baseDir': "./public"
         }
@@ -45,7 +45,7 @@ gulp.task('browserify', () => {
         .pipe(source('main.js'))
         .pipe(buffer()) // js 壓縮前置準備
         .pipe($.babel()) // ES6
-        .pipe(uglify()) // 壓縮 js
+        // .pipe(uglify()) // 壓縮 js
         .pipe(bom()) // 解決中文亂碼
         .pipe(gulp.dest('./public/assets'))
         .pipe(reload({stream: true}));
@@ -53,10 +53,19 @@ gulp.task('browserify', () => {
 
 // 監聽 scss
 gulp.task('scss', () => {
-    return sass('app/assets/styles/*.scss')
-        .pipe(minifyCSS({
-            keepBreaks: false
-        }))
+    return gulp.src('app/assets/styles/*.scss')
+        .pipe($.plumber())
+        .pipe($.sourcemaps.init())
+        .pipe($.sass.sync({
+            outputStyle: 'expanded',
+            precision: 10,
+            includePaths: ['.']
+        }).on('error', $.sass.logError))
+        .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
+        .pipe($.sourcemaps.write())
+        // .pipe(minifyCSS({
+        //     keepBreaks: false
+        // }))
         .pipe(gulp.dest('./public/assets'))
         .pipe(reload({stream: true}));
 });
@@ -65,23 +74,33 @@ gulp.task('scss', () => {
 gulp.task('fonts', () => {
     return gulp.src(mainBowerFiles('app/assets/fonts/*.{eot,svg,ttf,woff,woff2}', function (err) {})
         .concat('app/assets/fonts/**/*'))
-        .pipe(gulp.dest('public/assets/fonts'))
+        .pipe(gulp.dest('./public/assets/fonts'))
         .pipe(reload({stream: true}));
 });
 
 // 監聽圖片
 gulp.task('images', () => {
-    return gulp.src(mainBowerFiles('app/assets/images/*.{jpg,jpeg,png,svg}', function (err) {})
-        .concat('app/assets/images/**/*'))
-        .pipe(gulp.dest('public/assets/images'))
-        .pipe(reload({stream: true}));
+    return gulp.src('app/assets/images/**/*')
+        .pipe($.if($.if.isFile, $.cache($.imagemin({
+            progressive: true,
+            interlaced: true,
+            // don't remove IDs from SVGs, they are often used
+            // as hooks for embedding and styling
+            svgoPlugins: [{cleanupIDs: false}]
+        }))
+            .on('error', function (err) {
+                console.log(err);
+                this.end();
+            })))
+        .pipe(gulp.dest('./public/assets/images'));
 });
 
 // 監聽網頁
 gulp.task('html', () => {
     return gulp.src(mainBowerFiles('app/*.html', function (err) {})
         .concat('app/*'))
-        .pipe(htmlmin({collapseWhitespace: true}))
+    // .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(bom()) // 解決中文亂碼
         .pipe(gulp.dest('public'))
         .pipe(reload({stream: true}));
 });
