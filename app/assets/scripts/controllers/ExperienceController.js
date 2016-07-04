@@ -3,6 +3,25 @@ module.exports = function($scope, $rootScope) {
     
     $scope.experience = [
         {
+            name: 'SweeSa Girlfie',
+            intro: '服飾品牌網站，提供設計師穿搭教學。個人開發， web、mobile 各自獨立的頁面，並產出各 7 個靜態頁面',
+            duration: '2016.06 ~ 2016.07',
+            detail: [
+                {
+                    title: 'Front-End',
+                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'SASS / SCSS']
+                },
+                {
+                    title: 'Tools',
+                    tags: ['IntelliJ IDEA']
+                },
+                {
+                    title: 'System',
+                    tags: ['Gulp', 'Bower', 'npm']
+                }
+            ]
+        },
+        {
             name: 'Delta 台達電子',
             intro: '無 RWD 之教師備課系統，獨立完成靜態頁面，具客製化播放器、按鈕特效、拖拉上傳、班級即時排序演算法等功能；完成後需拆成 PHP 並以 include 方式組合頁面交給客戶。',
             duration: '2016.05 ~ Present',

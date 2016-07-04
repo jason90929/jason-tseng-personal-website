@@ -77,7 +77,7 @@ module.exports = function($scope, $rootScope) {
                 },
                 {
                     title: 'Git',
-                    content: '個人使用的版本控管，具備 Merge 衝突的技能'
+                    content: '個人使用的版本控管，懂 Branch，並具備 Merge 衝突的技能'
                 }
             ]
         },
@@ -102,7 +102,7 @@ module.exports = function($scope, $rootScope) {
                 },
                 {
                     title: 'Tomcat',
-                    content: '以 Grails 和 Java 所匯出的 .war 檔，使用架在 Linux 內的 Tomcat 去啟動。'
+                    content: '以 Grails 和 Java 所匯出的 .war 檔，並使用架在 Linux 內的 Tomcat 去啟動。'
                 }
             ]
         }
