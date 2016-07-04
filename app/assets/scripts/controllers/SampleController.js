@@ -3,6 +3,15 @@ module.exports = function($scope, $rootScope) {
 
     $scope.sample = [
         {
+            name: 'Girlfie（非公開）'
+        },
+        {
+            name: 'Delta（非公開）'
+        },
+        {
+            name: 'MyWedding（非公開）'
+        },
+        {
             name: 'Lotus Tours Taiwan',
             url: 'http://www.lotustourstpe.tw/'
         },
