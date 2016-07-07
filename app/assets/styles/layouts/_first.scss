@@ -102,4 +102,12 @@ body {
         -o-transition: all .3s linear;
         transition: all .3s linear;
     }
+
+    .fixed-full {
+        position: fixed;
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
 }

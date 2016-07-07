@@ -1,7 +1,8 @@
 @media screen {
     .content-wrapper {
         z-index: 0;
-        position: absolute;
+        position: relative;
+        display: block;
         padding-top: 80px;
         width: 100%;
 
@@ -35,6 +36,27 @@
         &.show-in-large {
             display: none;
         }
+    }
+
+    ._filter-bg {
+        //&::before {
+            content: '';
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            background-color: #000;
+            background-size: cover;
+            background-repeat: no-repeat;
+            //background-attachment: fixed;
+            background-position: top left;
+            background-image: url('images/background-sm.jpg');
+
+            -ms-filter: blur(3px);
+            -webkit-filter: blur(3px);
+            filter: blur(3px);
+        //}
     }
 
     .content {
@@ -274,7 +296,6 @@
 
 @media screen and (min-width: 992px) {
     .content-wrapper {
-        display: block;
         padding: 0;
 
         &.show-in-small {

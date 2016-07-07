@@ -67,21 +67,24 @@ module.exports = function($scope) {
 
     var $main_menu = $('.main-menu');
     var $main_header = $('.main-header');
+    var $fixed_full = $('.fixed-full');
 
     /* Every time the window is scrolled ... */
     $(window).scroll(function() {
         // 選單是否跟隨視窗
-        if (window.innerWidth > 992) {
-            if ($(window).scrollTop() > window.innerHeight - 46) {
+        var scrollTop = $(window).scrollTop();
+        var innerHeight = window.innerHeight;
+        if (scrollTop > innerHeight - 46) {
+            if (window.innerWidth > 992) {
                 $main_menu.addClass('fixed');
             }
             else {
-                $main_menu.removeClass('fixed');
+                $main_header.addClass('fixed');
             }
         }
         else {
-            if ($(window).scrollTop() > window.innerHeight - 46) {
-                $main_header.addClass('fixed');
+            if (window.innerWidth > 992) {
+                $main_menu.removeClass('fixed');
             }
             else {
                 $main_header.removeClass('fixed');
@@ -102,12 +105,15 @@ module.exports = function($scope) {
         }, 100); //100ms for example
     };
 
-    if (window.innerWidth > 992) {
-        bubble(40, 300);
+    try {
+        if (window.innerWidth > 992) {
+            bubble(30, 300);
+        }
+        else {
+            bubble(20, 150);
+        }
     }
-    else {
-        bubble(20, 150);
-    }
+    catch(e) {}
 
     $('.skin').scroll(function(){
         var x = $(this).scrollTop();

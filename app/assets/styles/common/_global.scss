@@ -19,6 +19,18 @@
     }
 }
 
+.blur {
+    -ms-filter: blur(5px);
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+
+    -webkit-transition: .5s all linear;
+    -moz-transition: .5s all linear;
+    -ms-transition: .5s all linear;
+    -o-transition: .5s all linear;
+    transition: .5s all linear;
+}
+
 @font-face {
     font-family: 'Oswald-Bold';
     font-weight: bold;
@@ -90,19 +102,19 @@
 @media screen {
     .main-bg {
         display: block;
-        position: fixed;
+        position: absolute;
         //left: 0;
         //top: 0;
         //right: 0;
         //bottom: 0;
-        overflow: hidden;
+        //overflow: hidden;
         z-index: -1;
         width: 100%;
         height: 100%;
         background-color: #000;
         background-size: cover;
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        //background-attachment: fixed;
         background-position: top left;
         background-image: url('images/background-sm.jpg');
     }
