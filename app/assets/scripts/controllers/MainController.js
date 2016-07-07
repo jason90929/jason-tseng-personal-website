@@ -67,7 +67,6 @@ module.exports = function($scope) {
 
     var $main_menu = $('.main-menu');
     var $main_header = $('.main-header');
-    var $fixed_full = $('.fixed-full');
 
     /* Every time the window is scrolled ... */
     $(window).scroll(function() {
@@ -102,7 +101,7 @@ module.exports = function($scope) {
     window.onload = function() {
         setTimeout (function () {
             scrollTo(0,0);
-        }, 100); //100ms for example
+        }, 100); // 100ms for example
     };
 
     try {
