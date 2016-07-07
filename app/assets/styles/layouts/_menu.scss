@@ -34,9 +34,10 @@
     }
 
     .main-header {
-        position: fixed;
+        position: absolute;
         display: block;
         width: 100%;
+        top: 100%;
         left: 0;
         z-index: 2;
         vertical-align: bottom;
@@ -54,17 +55,23 @@
         -moz-box-shadow: 0 0 5px 0 lighten($black-bg-opacity-dark-color, 25%) inset;
         box-shadow: 0 0 5px 0 lighten($black-bg-opacity-dark-color, 25%) inset;
 
-        -webkit-transition: all .3s linear;
-        -moz-transition: all .3s linear;
-        -ms-transition: all .3s linear;
-        -o-transition: all .3s linear;
-        transition: all .3s linear;
+        -webkit-transition: transform .3s linear;
+        -moz-transition: transform .3s linear;
+        -ms-transition: transform .3s linear;
+        -o-transition: transform .3s linear;
+        transition: transform .3s linear;
 
         background: $orange-bg-color; /* For browsers that do not support gradients */
         background: -webkit-linear-gradient(30deg, $orange-bg-color, lighten($orange-bg-color, 20%)); /* For Safari 5.1 to 6.0 */
         background: -o-linear-gradient(30deg, $orange-bg-color, lighten($orange-bg-color, 20%)); /* For Opera 11.1 to 12.0 */
         background: -moz-linear-gradient(30deg, $orange-bg-color, lighten($orange-bg-color, 20%)); /* For Firefox 3.6 to 15 */
         background: linear-gradient(30deg, $orange-bg-color, lighten($orange-bg-color, 20%)); /* Standard syntax */
+
+        &.fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
 
         hgroup {
             .show-more {
@@ -286,6 +293,7 @@
 
     .main-menu {
         width: 100%;
+        min-width: 1050px;
         top: calc(100% - 46px);
         height: 46px;
         padding: 0;

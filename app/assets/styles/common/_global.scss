@@ -4,8 +4,10 @@
 }
 
 .skin {
+    position: relative;
     text-align: justify;
     overflow-x: hidden;
+    background-color: #000;
 
     ::-moz-selection {
         background: lighten($orange-bg-color, 12%);
@@ -86,9 +88,13 @@
 }
 
 @media screen {
-    .skin {
+    .main-bg {
         display: block;
-        position: absolute;
+        position: fixed;
+        //left: 0;
+        //top: 0;
+        //right: 0;
+        //bottom: 0;
         width: 100%;
         height: 100%;
         background-color: #000;
@@ -101,13 +107,13 @@
 }
 
 @media screen and (min-width: 992px) {
-    .skin {
+    .main-bg {
         background-image: url('images/background-md.jpg');
     }
 }
 
 @media screen and (min-width: 1400px) {
-    .skin {
+    .main-bg {
         background-image: url('images/background-lg.jpg');
     }
 }

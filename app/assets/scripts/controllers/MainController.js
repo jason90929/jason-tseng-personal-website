@@ -70,6 +70,7 @@ module.exports = function($scope) {
     });
 
     var $main_menu = $('.main-menu');
+    var $main_header = $('.main-header');
 
     /* Every time the window is scrolled ... */
     $(window).scroll(function() {
@@ -81,6 +82,15 @@ module.exports = function($scope) {
             else {
                 $main_menu.removeClass('fixed');
             }
+        }
+        else {
+            if ($(window).scrollTop() > window.innerHeight - 46) {
+                $main_header.addClass('fixed');
+            }
+            else {
+                $main_header.removeClass('fixed');
+            }
+
         }
     });
 
