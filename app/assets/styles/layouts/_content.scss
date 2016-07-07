@@ -1,8 +1,9 @@
 @media screen {
     .content-wrapper {
         z-index: 0;
-        position: relative;
+        position: absolute;
         padding-top: 80px;
+        width: 100%;
 
         -webkit-transition: all .3s linear;
         -moz-transition: all .3s linear;

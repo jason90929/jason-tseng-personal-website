@@ -42,9 +42,7 @@ module.exports = function($scope) {
     // 小尺寸的顯示選單
     $scope.showNavigationMenu = function() {
         $('.main-menu').addClass('active');
-        $('.main-header').css('transform', 'translateX(80%)');
-        $('.tour-guide').css('transform', 'translateX(80%)');
-        $('.content-wrapper').css('transform', 'translateX(80%)');
+        $('.main-header').addClass('menu-showing');
 
         disableScroll();
         $scope.onShowingNavigation = true;
@@ -53,9 +51,7 @@ module.exports = function($scope) {
     // 小尺寸的隱藏選單
     $scope.hideNavigationMenu = function() {
         $('.main-menu').removeClass('active');
-        $('.main-header').css('transform', 'translateX(0)');
-        $('.tour-guide').css('transform', 'translateX(0)');
-        $('.content-wrapper').css('transform', 'translateX(0)');
+        $('.main-header').removeClass('menu-showing');
 
         enableScroll();
         $scope.onShowingNavigation = false;
@@ -90,7 +86,6 @@ module.exports = function($scope) {
             else {
                 $main_header.removeClass('fixed');
             }
-
         }
     });
 

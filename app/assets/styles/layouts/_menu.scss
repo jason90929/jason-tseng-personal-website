@@ -45,6 +45,12 @@
         -moz-border-radius: 1px;
         border-radius: 1px;
 
+        -webkit-transform: translateZ(1px);
+        -moz-transform: translateZ(1px);
+        -ms-transform: translateZ(1px);
+        -o-transform: translateZ(1px);
+        transform: translateZ(1px);
+
         background: $black-bg-opacity-dark-color; /* For browsers that do not support gradients */
         background: -webkit-linear-gradient(to top, $black-bg-opacity-dark-color, lighten($black-bg-opacity-dark-color, 10%)); /* For Safari 5.1 to 6.0 */
         background: -o-linear-gradient(to top, $black-bg-opacity-dark-color, lighten($black-bg-opacity-dark-color, 10%)); /* For Opera 11.1 to 12.0 */
@@ -71,6 +77,14 @@
             position: fixed;
             top: 0;
             left: 0;
+        }
+
+        &.menu-showing {
+            -webkit-transform: translate(80%) translateZ(1px);
+            -moz-transform: translate(80%) translateZ(1px);
+            -ms-transform: translate(80%) translateZ(1px);
+            -o-transform: translate(80%) translateZ(1px);
+            transform: translate(80%) translateZ(1px);
         }
 
         hgroup {
@@ -116,22 +130,19 @@
 
     .main-menu {
         position: fixed;
-        display: block;
+        bottom: 0;
         width: 80%;
         height: 100%;
-        top: 0;
-        left: 0;
-        bottom: 0;
+        //margin: 100px 0 0;
         padding: 0;
-        margin: 0;
         z-index: 1;
         text-align: right;
 
-        -webkit-transform: translateX(-100%);
-        -moz-transform: translateX(-100%);
-        -ms-transform: translateX(-100%);
-        -o-transform: translateX(-100%);
-        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%), translateZ(1px);
+        -moz-transform: translateX(-100%) translateZ(1px);
+        -ms-transform: translateX(-100%) translateZ(1px);
+        -o-transform: translateX(-100%) translateZ(1px);
+        transform: translateX(-100%) translateZ(1px);
 
         background: $black-bg-opacity-dark-color; /* For browsers that do not support gradients */
         background: -webkit-linear-gradient(to top, $black-bg-opacity-dark-color, lighten($black-bg-opacity-dark-color, 10%)); /* For Safari 5.1 to 6.0 */
@@ -150,11 +161,11 @@
         transition: all .3s linear;
 
         &.active {
-            -webkit-transform: translateX(0);
-            -moz-transform: translateX(0);
-            -ms-transform: translateX(0);
-            -o-transform: translateX(0);
-            transform: translateX(0);
+            -webkit-transform: translateZ(1px);
+            -moz-transform: translateZ(1px);
+            -ms-transform: translateZ(1px);
+            -o-transform: translateZ(1px);
+            transform: translateZ(1px);
         }
 
         ul {
