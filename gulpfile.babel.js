@@ -42,6 +42,7 @@ gulp.task('connect', () => {
 gulp.task('browserify', () => {
     return browserify('app/assets/scripts/app.js')
         .bundle()
+        .on('error', function(err) { console.error(err); this.emit('end'); })
         .pipe(source('main.js'))
         .pipe(buffer()) // js 壓縮前置準備
         .pipe($.babel()) // ES6
