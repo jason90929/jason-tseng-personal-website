@@ -69,7 +69,7 @@ module.exports = function($scope) {
     var $main_header = $('.main-header');
 
     /* Every time the window is scrolled ... */
-    $(window).scroll(function() {
+    $(window).on('scroll', function() {
         // 選單是否跟隨視窗
         var scrollTop = $(window).scrollTop();
         var innerHeight = window.innerHeight;
@@ -104,6 +104,7 @@ module.exports = function($scope) {
         }, 100); // 100ms for example
     };
 
+    // 泡泡特效的數量依照尺寸調整
     try {
         if (window.innerWidth > 992) {
             bubble(30, 300);
@@ -114,10 +115,11 @@ module.exports = function($scope) {
     }
     catch(e) {}
 
-    $('.skin').scroll(function(){
-        var x = $(this).scrollTop();
-        $(this).css('background-position','0% '+parseInt(-x/10)+'px');
-    });
+    // 忘了這幹嘛的
+    // $('.skin').scroll(function() {
+    //     var x = $(this).scrollTop();
+    //     $(this).css('background-position','0% ' + parseInt(-x / 10) + 'px');
+    // });
 };
 
 // left: 37, up: 38, right: 39, down: 40,

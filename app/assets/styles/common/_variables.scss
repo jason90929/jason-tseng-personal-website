@@ -14,3 +14,52 @@ $purple: rgb(140, 63, 139);
 $white: rgb(255, 255, 255);
 $gray: rgb(97, 97, 97);
 $black: rgb(0, 0, 0);
+
+@font-face {
+    font-family: 'Oswald-Bold';
+    src: url('fonts/Oswald/Oswald-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald-BoldItalic';
+    src: url('fonts/Oswald/Oswald-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Oswald-Light';
+    src: url('fonts/Oswald/Oswald-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald-LightItalic';
+    src: url('fonts/Oswald/Oswald-LightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Oswald-Medium';
+    src: url('fonts/Oswald/Oswald-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald-MediumItalic';
+    src: url('fonts/Oswald/Oswald-MediumItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'XinGothic';
+    src: url('fonts/shin-black.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -3,7 +3,26 @@ module.exports = function($scope, $rootScope) {
     
     $scope.experience = [
         {
-            name: 'SweeSa Girlfie',
+            name: 'ctop 圖資網',
+            intro: '房屋價格圖資查詢，相當具有挑戰的 RWD 網頁，個人開發。以 AJAX 呼叫多 HTML 方式呈現於頁面上，以達到效能最大化。',
+            duration: '2016.07 ~ 2016.08',
+            detail: [
+                {
+                    title: 'Front-End',
+                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'SASS / SCSS']
+                },
+                {
+                    title: 'Tools',
+                    tags: ['IntelliJ IDEA']
+                },
+                {
+                    title: 'System',
+                    tags: ['Gulp', 'Bower', 'npm']
+                }
+            ]
+        },
+        {
+            name: 'Girlfie. 找穿搭',
             intro: '服飾品牌網站，提供設計師穿搭教學。個人開發， web、mobile 各自獨立的頁面，並產出各 7 個靜態頁面',
             duration: '2016.06 ~ 2016.07',
             detail: [

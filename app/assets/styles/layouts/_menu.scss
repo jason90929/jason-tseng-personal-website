@@ -1,6 +1,7 @@
 @media screen {
     .navigation-mask {
         position: fixed;
+        -webkit-backface-visibility: hidden;
         display: block;
         width: 100%;
         height: 100%;
@@ -61,11 +62,11 @@
         -moz-box-shadow: 0 0 5px 0 lighten($black-bg-opacity-dark-color, 25%) inset;
         box-shadow: 0 0 5px 0 lighten($black-bg-opacity-dark-color, 25%) inset;
 
-        -webkit-transition: transform .3s linear;
-        -moz-transition: transform .3s linear;
-        -ms-transition: transform .3s linear;
-        -o-transition: transform .3s linear;
-        transition: transform .3s linear;
+        -webkit-transition: left .3s linear;
+        -moz-transition: left .3s linear;
+        -ms-transition: left .3s linear;
+        -o-transition: left .3s linear;
+        transition: left .3s linear;
 
         background: $orange-bg-color; /* For browsers that do not support gradients */
         background: -webkit-linear-gradient(30deg, $orange-bg-color, lighten($orange-bg-color, 20%)); /* For Safari 5.1 to 6.0 */
@@ -75,16 +76,18 @@
 
         &.fixed {
             position: fixed;
+            -webkit-backface-visibility: hidden;
             top: 0;
             left: 0;
         }
 
         &.menu-showing {
-            -webkit-transform: translate(80%) translateZ(1px);
-            -moz-transform: translate(80%) translateZ(1px);
-            -ms-transform: translate(80%) translateZ(1px);
-            -o-transform: translate(80%) translateZ(1px);
-            transform: translate(80%) translateZ(1px);
+            //-webkit-transform: translateX(80%) translateZ(1px);
+            //-moz-transform: translateX(80%) translateZ(1px);
+            //-ms-transform: translateX(80%) translateZ(1px);
+            //-o-transform: translateX(80%) translateZ(1px);
+            //transform: translateX(80%) translateZ(1px);
+            left: 80%;
         }
 
         hgroup {
@@ -130,6 +133,7 @@
 
     .main-menu {
         position: fixed;
+        -webkit-backface-visibility: hidden;
         bottom: 0;
         width: 80%;
         height: 100%;
@@ -138,11 +142,12 @@
         z-index: 1;
         text-align: right;
 
-        -webkit-transform: translateX(-100%), translateZ(1px);
-        -moz-transform: translateX(-100%) translateZ(1px);
-        -ms-transform: translateX(-100%) translateZ(1px);
-        -o-transform: translateX(-100%) translateZ(1px);
-        transform: translateX(-100%) translateZ(1px);
+        //-webkit-transform: translateX(-100%), translateZ(1px);
+        //-moz-transform: translateX(-100%) translateZ(1px);
+        //-ms-transform: translateX(-100%) translateZ(1px);
+        //-o-transform: translateX(-100%) translateZ(1px);
+        //transform: translateX(-100%) translateZ(1px);
+        left: -100%;
 
         background: $black-bg-opacity-dark-color; /* For browsers that do not support gradients */
         background: -webkit-linear-gradient(to top, $black-bg-opacity-dark-color, lighten($black-bg-opacity-dark-color, 10%)); /* For Safari 5.1 to 6.0 */
@@ -154,11 +159,11 @@
         -moz-box-shadow: 0 0 5px 0 lighten($black-bg-opacity-dark-color, 25%) inset;
         box-shadow: 0 0 5px 0 lighten($black-bg-opacity-dark-color, 25%) inset;
 
-        -webkit-transition: all .3s linear;
-        -moz-transition: all .3s linear;
-        -ms-transition: all .3s linear;
-        -o-transition: all .3s linear;
-        transition: all .3s linear;
+        -webkit-transition: left .3s linear;
+        -moz-transition: left .3s linear;
+        -ms-transition: left .3s linear;
+        -o-transition: left .3s linear;
+        transition: left .3s linear;
 
         &.active {
             -webkit-transform: translateZ(1px);
@@ -166,6 +171,8 @@
             -ms-transform: translateZ(1px);
             -o-transform: translateZ(1px);
             transform: translateZ(1px);
+
+            left: 0;
         }
 
         ul {
@@ -308,6 +315,7 @@
         top: calc(100% - 46px);
         height: 46px;
         padding: 0;
+        left: 0;
         position: absolute;
         display: block;
         margin: 0;
@@ -328,6 +336,7 @@
 
         &.fixed {
             position: fixed;
+            -webkit-backface-visibility: hidden;
             top: 0;
 
             -webkit-transition: none;

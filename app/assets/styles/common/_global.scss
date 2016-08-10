@@ -31,46 +31,6 @@
     transition: .5s all linear;
 }
 
-@font-face {
-    font-family: 'Oswald-Bold';
-    font-weight: bold;
-    src: url('fonts/Oswald/Oswald-Bold.ttf');
-}
-
-@font-face {
-    font-family: 'Oswald-BoldItalic';
-    font-weight: bold;
-    font-style: italic;
-    src: url('fonts/Oswald/Oswald-BoldItalic.ttf');
-}
-
-@font-face {
-    font-family: 'Oswald-Light';
-    src: url('fonts/Oswald/Oswald-Light.ttf');
-}
-
-@font-face {
-    font-family: 'Oswald-LightItalic';
-    font-style: italic;
-    src: url('fonts/Oswald/Oswald-LightItalic.ttf');
-}
-
-@font-face {
-    font-family: 'Oswald-Medium';
-    src: url('fonts/Oswald/Oswald-Medium.ttf');
-}
-
-@font-face {
-    font-family: 'Oswald-MediumItalic';
-    font-style: italic;
-    src: url('fonts/Oswald/Oswald-MediumItalic.ttf');
-}
-
-@font-face {
-    font-family: 'XinGothic';
-    src: url('fonts/shin-black.otf');
-}
-
 .text-red {
     color: $red;
 }

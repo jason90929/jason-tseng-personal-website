@@ -46,7 +46,7 @@ gulp.task('browserify', () => {
         .pipe(source('main.js'))
         .pipe(buffer()) // js 壓縮前置準備
         .pipe($.babel()) // ES6
-        // .pipe(uglify()) // 壓縮 js
+        .pipe(uglify()) // 壓縮 js
         .pipe(bom()) // 解決中文亂碼
         .pipe(gulp.dest('./public/assets'))
         .pipe(reload({stream: true}));
@@ -64,9 +64,9 @@ gulp.task('scss', () => {
         }).on('error', $.sass.logError))
         .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
         .pipe($.sourcemaps.write())
-        // .pipe(minifyCSS({
-        //     keepBreaks: false
-        // }))
+        .pipe(minifyCSS({
+            keepBreaks: false
+        }))
         .pipe(gulp.dest('./public/assets'))
         .pipe(reload({stream: true}));
 });

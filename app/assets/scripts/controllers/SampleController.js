@@ -3,7 +3,10 @@ module.exports = function($scope, $rootScope) {
 
     $scope.sample = [
         {
-            name: 'Girlfie（非公開）'
+            name: 'ctop（非公開）'
+        },
+        {
+            name: 'Girlfie.（非公開）'
         },
         {
             name: 'Delta（非公開）'
