@@ -144,6 +144,24 @@
     word-break: break-all;
 }
 
+pre.pre-custom {
+    display: block;
+    font-size: inherit;
+    font-family: inherit;
+    text-align: justify;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    overflow: hidden;
+    resize: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
 /* First animation*/
 .view {
     position: absolute;

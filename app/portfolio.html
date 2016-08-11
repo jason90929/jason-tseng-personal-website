@@ -9,6 +9,7 @@
         <div class="list" ng-repeat="item in sample">
             <a href="javascript:;" ng-click="openTab(item.url);">
                 <img ng-src="{{item.src}}" alt="{{item.name}}" />
+                <pre class="_info pre-custom" ng-bind="item.info"></pre>
             </a>
         </div>
     </div>
