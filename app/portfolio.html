@@ -1,8 +1,15 @@
 <div ng-controller="PortfolioController">
     <h2 class="title" ng-bind="title"></h2>
 
-    <h3 class="indent" ng-repeat="item in sample">
-        <a ng-if="item.url" ng-href="{{item.url}}" target="_blank" ng-bind="item.name"></a>
-        <a ng-if="!item.url" href="javascript:;" ng-bind="item.name"></a>
-    </h3>
+    <!--<h3 class="indent" ng-repeat="item in sample">-->
+        <!--<a ng-if="item.url" ng-href="{{item.url}}" target="_blank" ng-bind="item.name"></a>-->
+        <!--<a ng-if="!item.url" href="javascript:;" ng-bind="item.name"></a>-->
+    <!--</h3>-->
+    <div class="portfolio-wrapper">
+        <div class="list" ng-repeat="item in sample">
+            <a href="javascript:;" ng-click="openTab(item.url);">
+                <img ng-src="{{item.src}}" alt="{{item.name}}" />
+            </a>
+        </div>
+    </div>
 </div>
