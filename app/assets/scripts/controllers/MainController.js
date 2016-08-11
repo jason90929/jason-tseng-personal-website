@@ -5,29 +5,29 @@ module.exports = function($scope) {
             name: 'ABOUT',
             order: 1
         },
-        {
-            id: 'experience',
-            name: 'EXPERIENCE',
-            order: 2
-        },
+        // {
+        //     id: 'experience',
+        //     name: 'EXPERIENCE',
+        //     order: 2
+        // },
         {
             id: 'skills',
             name: 'SKILLS',
             order: 3
         },
+        // {
+        //     id: 'education',
+        //     name: 'EDUCATION',
+        //     order: 4
+        // },
+        // {
+        //     id: 'employment',
+        //     name: 'EMPLOYMENT',
+        //     order: 5
+        // },
         {
-            id: 'education',
-            name: 'EDUCATION',
-            order: 4
-        },
-        {
-            id: 'employment',
-            name: 'EMPLOYMENT',
-            order: 5
-        },
-        {
-            id: 'sample',
-            name: 'SAMPLE',
+            id: 'portfolio',
+            name: 'PORTFOLIO',
             order: 6
         },
         {

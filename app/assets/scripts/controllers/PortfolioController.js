@@ -1,12 +1,13 @@
 module.exports = function($scope, $rootScope) {
-    $scope.title = 'Sample';
+    $scope.title = 'Portfolio';
 
     $scope.sample = [
         {
             name: 'ctop（非公開）'
         },
         {
-            name: 'Girlfie.（非公開）'
+            name: 'Girlfie.',
+            url: 'http://girlfie.com.tw'
         },
         {
             name: 'Delta（非公開）'
@@ -32,7 +33,7 @@ module.exports = function($scope, $rootScope) {
         },
         {
             name: 'WeThink Software',
-            url: 'http://www.lotustourstpe.tw/'
+            url: 'http://www.wethink.com.tw/'
         }
     ];
 };
