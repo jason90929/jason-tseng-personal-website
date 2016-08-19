@@ -3,8 +3,27 @@ module.exports = function($scope, $rootScope) {
     
     $scope.experience = [
         {
+            name: 'Gopapala',
+            intro: '約會網站',
+            duration: '2016.08',
+            detail: [
+                {
+                    title: 'Front-End',
+                    tags: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'SASS / SCSS']
+                },
+                {
+                    title: 'Tools',
+                    tags: ['IntelliJ IDEA']
+                },
+                {
+                    title: 'System',
+                    tags: ['Gulp', 'Bower', 'npm']
+                }
+            ]
+        },
+        {
             name: 'ctop 圖資網',
-            intro: '房屋價格圖資查詢，相當具有挑戰的 RWD 網頁，個人開發。以 AJAX 呼叫多 HTML 方式呈現於頁面上，以達到效能最大化。',
+            intro: '房屋價格圖資查詢，相當具有挑戰的 RWD 網頁，個人開發。以 AJAX 呼叫多 HTML 方式呈現於頁面上，以達到效能最大化',
             duration: '2016.07 ~ 2016.08',
             detail: [
                 {
@@ -42,7 +61,7 @@ module.exports = function($scope, $rootScope) {
         },
         {
             name: 'Delta 台達電子',
-            intro: '無 RWD 之教師備課系統，獨立完成靜態頁面，具客製化播放器、按鈕特效、拖拉上傳、班級即時排序演算法等功能；完成後需拆成 PHP 並以 include 方式組合頁面交給客戶。',
+            intro: '無 RWD 之教師備課系統，獨立完成靜態頁面，具客製化播放器、按鈕特效、拖拉上傳、班級即時排序演算法等功能；完成後需拆成 PHP 並以 include 方式組合頁面交給客戶',
             duration: '2016.05 ~ Present',
             detail: [
                 {
@@ -107,7 +126,7 @@ module.exports = function($scope, $rootScope) {
         },
         {
             name: '遠傳 ARAP 應收應付系統',
-            intro: '協助開發，包含連動 Java、Struts2 架構的 Action 端，以完成畫面能夠實行 CRUD 為此專案主要目的。',
+            intro: '協助開發，包含連動 Java、Struts2 架構的 Action 端，以完成畫面能夠實行 CRUD 為此專案主要目的',
             duration: '2015.10 ~ 2016.02',
             detail: [
                 {

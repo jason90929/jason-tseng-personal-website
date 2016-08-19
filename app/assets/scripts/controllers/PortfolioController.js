@@ -3,6 +3,11 @@ module.exports = function($scope, $rootScope) {
 
     $scope.sample = [
         {
+            name: 'Gopapala',
+            src: 'assets/images/portfolio/gopapala.png',
+            info: 'Gopapala（非公開）\n'
+        },
+        {
             name: 'ctop',
             src: 'assets/images/portfolio/ctop.png',
             info: 'ctop（非公開）\n'
