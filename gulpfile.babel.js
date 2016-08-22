@@ -45,7 +45,7 @@ gulp.task('browserify', () => {
         .on('error', function(err) { console.error(err); this.emit('end'); })
         .pipe(source('main.js'))
         .pipe(buffer()) // js 壓縮前置準備
-        .pipe($.babel()) // ES6
+        .pipe($.babel({compact: false})) // ES6, compact: false -> no warning for 100KB succeed
         .pipe(uglify()) // 壓縮 js
         .pipe(bom()) // 解決中文亂碼
         .pipe(gulp.dest('./public/assets'))
