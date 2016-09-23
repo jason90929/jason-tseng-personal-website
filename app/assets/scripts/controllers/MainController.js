@@ -168,43 +168,91 @@ function bubble(amount, maxSize) {
 
     function begin() {
         for (let i = 0; i < amount; i++) {
-            $(fragment).append(createElement());
+            fragment.appendChild(createElement());
         }
         container.appendChild(fragment); // append all dynamically created elements at once
         // generateAnimation(); // then build their animation
     }
 
     function createElement() {
+        console.log('creating');
         const diameter = Math.floor(Math.random() * maxSize + minSize) - 1;
         const size = 150; // 大小固定
         const size_imp = Math.floor(Math.random() * 8) + 1;
         const rotate_way = Math.floor(Math.random() * 2); // 順時針與逆時針
 
-        return ('<svg id="organic-blob" class="bubble" style="top: ' + Math.floor(Math.random() * 80) + '%; left: ' + Math.floor(Math.random() * 80) + '%;"' +
-        ' width="' + diameter + '" height="' + diameter + '" xmlns="http://www.w3.org/2000/svg" fill="#fff">' +
-        '<g>' +
-        '<circle r="' + diameter / 3 + '" cy="' + (diameter / 300) * (size - size_imp) + '" cx="' + (diameter / 300) * size + '">' +
-        '<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="' + (rotate_way ? 0 : 360) + ' ' +
-        (diameter / 300) * (size - size_imp) + ' ' + (diameter / 300) * size + '" to="' + (rotate_way ? 360 : 0) + ' ' + (diameter / 300) * (size - size_imp) + ' ' +
-        (diameter / 300) * size + '" dur="' + Math.floor(Math.random() * 8) + 2 + 's" repeatCount="indefinite"/>' +
-        '</circle>' +
-        '<circle r="' + diameter / 3 + '" cy="' + (diameter / 300) * (size + size_imp) + '" cx="' + (diameter / 300) * size + '">' +
-        '<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="' + (rotate_way ? 360 : 0) + ' ' +
-        (diameter / 300) * (size + size_imp) + ' ' + (diameter / 300) * size + '" to="' + (rotate_way ? 0 : 360) + ' ' + (diameter / 300) * (size + size_imp) + ' ' +
-        (diameter / 300) * size + '" dur="' + Math.floor(Math.random() * 8) + 2 + 's" repeatCount="indefinite"/>' +
-        '</circle>' +
-        '<circle r="' + diameter / 3 + '" cy="' + (diameter / 300) * size + '" cx="' + (diameter / 300) * (size - size_imp) + '">' +
-        '<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="' + (rotate_way ? 0 : 360) + ' ' +
-        (diameter / 300) * size + ' ' + (diameter / 300) * 145 + '" to="' + (rotate_way ? 360 : 0) + ' ' + (diameter / 300) * size + ' ' +
-        (diameter / 300) * (size - size_imp) + '" dur="' + Math.floor(Math.random() * 8) + 2.5 + 's" repeatCount="indefinite"/>' +
-        '</circle>' +
-        '<circle r="' + diameter / 3 + '" cy="' + (diameter / 300) * size + '" cx="' + (diameter / 300) * (size + size_imp) + '">' +
-        '<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="' + (rotate_way ? 360 : 0) + ' ' +
-        (diameter / 300) * size + ' ' + (diameter / 300) * 155 + '" to="' + (rotate_way ? 0 : 360) + ' ' + (diameter / 300) * size + ' ' +
-        (diameter / 300) * (size + 5) + '" dur="' + Math.floor(Math.random() * 8) + 3 + 's" repeatCount="indefinite"/>' +
-        '</circle>' +
-        '</g>' +
-        '</svg>');
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('class', 'bubble');
+        svg.setAttribute('style', 'top: ' + Math.floor(Math.random() * 80) + '%; left: ' + Math.floor(Math.random() * 80) + '%;');
+        svg.setAttribute('width', diameter);
+        svg.setAttribute('height', diameter);
+        svg.setAttributeNS('http://www.w3.org/2000/xmlns/', 'xmlns:xlink', 'http://www.w3.org/1999/xlink');
+        svg.setAttribute('fill', '#fff');
+
+        const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+
+        var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('r', diameter / 3);
+        circle.setAttribute('cy', (diameter / 300) * (size - size_imp));
+        circle.setAttribute('cx', (diameter / 300) * size);
+        var animateTransform = document.createElement('animateTransform');
+        animateTransform.setAttribute('attributeType', 'xml');
+        animateTransform.setAttribute('attributeName', 'transform');
+        animateTransform.setAttribute('type', 'rotate');
+        animateTransform.setAttribute('from', (rotate_way ? 0 : 360) + ' ' + (diameter / 300) * (size - size_imp) + ' ' + (diameter / 300) * size);
+        animateTransform.setAttribute('to', (rotate_way ? 360 : 0) + ' ' + (diameter / 300) * (size - size_imp) + ' ' + (diameter / 300) * size);
+        animateTransform.setAttribute('dur', Math.floor(Math.random() * 8) + 2 + 's');
+        animateTransform.setAttribute('repeatCount', 'indefinite');
+        circle.appendChild(animateTransform);
+        g.appendChild(circle);
+
+        circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('r', diameter / 3);
+        circle.setAttribute('cy', (diameter / 300) * (size - size_imp));
+        circle.setAttribute('cx', (diameter / 300) * size);
+        animateTransform = document.createElement('animateTransform');
+        animateTransform.setAttribute('attributeType', 'xml');
+        animateTransform.setAttribute('attributeName', 'transform');
+        animateTransform.setAttribute('type', 'rotate');
+        animateTransform.setAttribute('from', (rotate_way ? 360 : 0) + ' ' + (diameter / 300) * (size + size_imp) + ' ' + (diameter / 300) * size);
+        animateTransform.setAttribute('to', (rotate_way ? 0 : 360) + ' ' + (diameter / 300) * (size + size_imp) + ' ' + (diameter / 300) * size);
+        animateTransform.setAttribute('dur', Math.floor(Math.random() * 8) + 2 + 's');
+        animateTransform.setAttribute('repeatCount', 'indefinite');
+        circle.appendChild(animateTransform);
+        g.appendChild(circle);
+
+        circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('r', diameter / 3);
+        circle.setAttribute('cy', (diameter / 300) * size);
+        circle.setAttribute('cx', (diameter / 300) * (size - size_imp));
+        animateTransform = document.createElement('animateTransform');
+        animateTransform.setAttribute('attributeType', 'xml');
+        animateTransform.setAttribute('attributeName', 'transform');
+        animateTransform.setAttribute('type', 'rotate');
+        animateTransform.setAttribute('from', (rotate_way ? 0 : 360) + ' ' + (diameter / 300) * size + ' ' + (diameter / 300) * 145);
+        animateTransform.setAttribute('to', (rotate_way ? 360 : 0) + ' ' + (diameter / 300) * size + ' ' + (diameter / 300) * (size - size_imp));
+        animateTransform.setAttribute('dur', Math.floor(Math.random() * 8) + 2.5 + 's');
+        animateTransform.setAttribute('repeatCount', 'indefinite');
+        circle.appendChild(animateTransform);
+        g.appendChild(circle);
+
+        circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('r', diameter / 3);
+        circle.setAttribute('cy', (diameter / 300) * size);
+        circle.setAttribute('cx', (diameter / 300) * (size - size_imp));
+        animateTransform = document.createElement('animateTransform');
+        animateTransform.setAttribute('attributeType', 'xml');
+        animateTransform.setAttribute('attributeName', 'transform');
+        animateTransform.setAttribute('type', 'rotate');
+        animateTransform.setAttribute('from', (rotate_way ? 360 : 0) + ' ' + (diameter / 300) * size + ' ' + (diameter / 300) * 155);
+        animateTransform.setAttribute('to', (rotate_way ? 0 : 360) + ' ' + (diameter / 300) * size + ' ' + (diameter / 300) * (size + 5));
+        animateTransform.setAttribute('dur', Math.floor(Math.random() * 8) + 3 + 's');
+        animateTransform.setAttribute('repeatCount', 'indefinite');
+        circle.appendChild(animateTransform);
+        g.appendChild(circle);
+
+        svg.appendChild(g);
+        return svg;
     }
 
     // function generateAnimation() {
